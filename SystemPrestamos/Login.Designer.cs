@@ -32,9 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.ContrasenaTextBox = new System.Windows.Forms.TextBox();
-            this.IniciarButton = new System.Windows.Forms.Button();
-            this.CancelarButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.CancelarButton = new System.Windows.Forms.Button();
+            this.IniciarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -72,28 +72,6 @@
             this.ContrasenaTextBox.TabIndex = 3;
             this.ContrasenaTextBox.UseSystemPasswordChar = true;
             // 
-            // IniciarButton
-            // 
-            this.IniciarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IniciarButton.Location = new System.Drawing.Point(12, 256);
-            this.IniciarButton.Name = "IniciarButton";
-            this.IniciarButton.Size = new System.Drawing.Size(75, 60);
-            this.IniciarButton.TabIndex = 4;
-            this.IniciarButton.Text = "INICIAR";
-            this.IniciarButton.UseVisualStyleBackColor = true;
-            this.IniciarButton.Click += new System.EventHandler(this.IniciarButton_Click);
-            // 
-            // CancelarButton
-            // 
-            this.CancelarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelarButton.Location = new System.Drawing.Point(180, 256);
-            this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(75, 60);
-            this.CancelarButton.TabIndex = 5;
-            this.CancelarButton.Text = "CANCELAR";
-            this.CancelarButton.UseVisualStyleBackColor = true;
-            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -107,11 +85,40 @@
             this.label3.Text = "SystemPrestamos";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // CancelarButton
+            // 
+            this.CancelarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelarButton.Image = global::SystemPrestamos.Properties.Resources.cancel;
+            this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.CancelarButton.Location = new System.Drawing.Point(180, 256);
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Size = new System.Drawing.Size(75, 71);
+            this.CancelarButton.TabIndex = 5;
+            this.CancelarButton.Text = "CANCELAR";
+            this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CancelarButton.UseVisualStyleBackColor = true;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
+            // 
+            // IniciarButton
+            // 
+            this.IniciarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IniciarButton.Image = global::SystemPrestamos.Properties.Resources._1445992385_Open;
+            this.IniciarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.IniciarButton.Location = new System.Drawing.Point(12, 256);
+            this.IniciarButton.Name = "IniciarButton";
+            this.IniciarButton.Size = new System.Drawing.Size(75, 71);
+            this.IniciarButton.TabIndex = 4;
+            this.IniciarButton.Text = "INICIAR";
+            this.IniciarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.IniciarButton.UseVisualStyleBackColor = true;
+            this.IniciarButton.Click += new System.EventHandler(this.IniciarButton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(266, 323);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(266, 354);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.IniciarButton);
