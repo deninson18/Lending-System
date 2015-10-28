@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +49,31 @@
             // 
             // registrosToolStripMenuItem
             // 
+            this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.registrosToolStripMenuItem.Text = "Registros";
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.registrosToolStripMenuItem.Text = "File";
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuarioToolStripMenuItem1});
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Text = "Registros";
+            // 
+            // usuarioToolStripMenuItem1
+            // 
+            this.usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
+            this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem1.Text = "Usuario";
             // 
             // Principal
             // 
@@ -78,5 +96,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem1;
     }
 }

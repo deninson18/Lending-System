@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL 
 {
-    public class Usuarios:ClaseMaestra
+    public class Login:ClaseMaestra
     {
         public string  Nombre { get; set; }
         public string Apellido { get; set; }
