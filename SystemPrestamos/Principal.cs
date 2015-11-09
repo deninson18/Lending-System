@@ -16,5 +16,11 @@ namespace SystemPrestamos
         {
             InitializeComponent();
         }
+
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RegistroUsuario ru = new RegistroUsuario();
+            ru.Show();
+        }
     }
 }

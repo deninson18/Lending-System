@@ -5,17 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace DAL
 {
-    public class Conexion
+    public class ConexionDb
     {
         private SqlConnection conexion;
         private SqlCommand cmd;
 
-        public Conexion() 
+        public ConexionDb() 
         {
-            conexion = new SqlConnection("");
+            //conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["ConStr"].ConnectionString);
+            conexion = new SqlConnection("Data Source=ServerBlack-PC\\SQLEXPRESS;Initial Catalog=PrestamosDb;Integrated Security=True");
             cmd = new SqlCommand();
         }
 
