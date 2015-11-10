@@ -19,7 +19,7 @@ namespace SystemPrestamos
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
+            
         }
     }
 }

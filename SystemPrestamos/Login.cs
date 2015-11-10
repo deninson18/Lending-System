@@ -14,10 +14,22 @@ namespace SystemPrestamos
 
     public partial class Login : Form
     {
+        private string Usuario { get; set; }
+        private string contrasena { get; set; }
+
         public Login()
         {
             InitializeComponent();
+            this.Usuario = "";
+            this.contrasena = "";
         }
+
+        public Login(string usuario, string contrasena)
+        {
+            this.Usuario = usuario;
+            this.contrasena = contrasena;
+        }
+       
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
@@ -29,32 +41,27 @@ namespace SystemPrestamos
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void IniciarButton_Click(object sender, EventArgs e)
         {
-            string Usuario = "deninson";
-            string contrasena = "12345";
+            Usuarios user = new Usuarios();
 
-            if (usuarioTextBox.Text == Usuario && ContrasenaTextBox.Text==contrasena)
-            {
-                Principal menu =new Principal();
-                menu.Show();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o Contraseña Incorrectas");
-            }
-            {
+            //user.NombreUsuario = usuarioTextBox.Text;
+            //user.Contrasena = ContrasenaTextBox.Text;
+            /* if (usuarioTextBox.Text == NombreUsuario && ContrasenaTextBox.Text==Contrasena)
+             {
+                 Principal menu =new Principal();
+                 menu.Show();
+             }
+             else
+             {
+                 MessageBox.Show("Usuario o Contraseña Incorrectas");
+             }*/
+        }
 
-            }
-            
-
-
-
+        private void Registrarbutton_Click(object sender, EventArgs e)
+        {
+            RegistroUsuario ru = new RegistroUsuario();
+            ru.Show();
         }
     }
 }
