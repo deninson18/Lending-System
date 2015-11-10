@@ -43,6 +43,7 @@
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
