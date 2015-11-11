@@ -21,5 +21,11 @@ namespace SystemPrestamos
         {
            
         }
+
+        private void rutasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroClientes cliente = new RegistroClientes();
+            cliente.Show();
+        }
     }
 }

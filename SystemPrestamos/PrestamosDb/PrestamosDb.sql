@@ -28,3 +28,5 @@ RutaId int,NombreRuta varchar(100),MontoPrestamos float,Cuotas float,Interes flo
 TipodePrestamo varchar(15),PrestamosDetalle float);
                             
 create table Atrasos(AtrasoId int identity primary key,CantidadAtraso int);
+
+select * from Clientes
