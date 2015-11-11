@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SystemPrestamos
 {
     public partial class Principal : Form
@@ -19,7 +20,7 @@ namespace SystemPrestamos
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void rutasToolStripMenuItem_Click(object sender, EventArgs e)
