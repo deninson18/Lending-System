@@ -47,7 +47,7 @@ namespace SystemPrestamos
 
             //user.NombreUsuario = usuarioTextBox.Text;
             //user.Contrasena = ContrasenaTextBox.Text;
-            /* if (usuarioTextBox.Text == NombreUsuario && ContrasenaTextBox.Text==Contrasena)
+             if (usuarioTextBox.Text == "deninson" && ContrasenaTextBox.Text=="12345")
              {
                  Principal menu =new Principal();
                  menu.Show();
@@ -55,13 +55,12 @@ namespace SystemPrestamos
              else
              {
                  MessageBox.Show("Usuario o Contraseña Incorrectas");
-             }*/
+             }
         }
 
         private void Registrarbutton_Click(object sender, EventArgs e)
         {
-            RegistroUsuario ru = new RegistroUsuario();
-            ru.Show();
+            
         }
     }
 }

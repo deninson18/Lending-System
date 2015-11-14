@@ -104,6 +104,7 @@
             this.cobradoresToolStripMenuItem1.Name = "cobradoresToolStripMenuItem1";
             this.cobradoresToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.cobradoresToolStripMenuItem1.Text = "Cobradores";
+            this.cobradoresToolStripMenuItem1.Click += new System.EventHandler(this.cobradoresToolStripMenuItem1_Click);
             // 
             // rutasToolStripMenuItem1
             // 

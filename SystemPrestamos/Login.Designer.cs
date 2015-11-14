@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CancelarButton = new System.Windows.Forms.Button();
             this.IniciarButton = new System.Windows.Forms.Button();
-            this.Registrarbutton = new System.Windows.Forms.Button();
             this.SysPrestamoslabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -109,16 +108,6 @@
             this.IniciarButton.UseVisualStyleBackColor = true;
             this.IniciarButton.Click += new System.EventHandler(this.IniciarButton_Click);
             // 
-            // Registrarbutton
-            // 
-            this.Registrarbutton.Location = new System.Drawing.Point(89, 365);
-            this.Registrarbutton.Name = "Registrarbutton";
-            this.Registrarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Registrarbutton.TabIndex = 7;
-            this.Registrarbutton.Text = "Registrarse";
-            this.Registrarbutton.UseVisualStyleBackColor = true;
-            this.Registrarbutton.Click += new System.EventHandler(this.Registrarbutton_Click);
-            // 
             // SysPrestamoslabel
             // 
             this.SysPrestamoslabel.AutoSize = true;
@@ -136,7 +125,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(271, 409);
             this.Controls.Add(this.SysPrestamoslabel);
-            this.Controls.Add(this.Registrarbutton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.IniciarButton);
@@ -162,7 +150,6 @@
         private System.Windows.Forms.Button IniciarButton;
         private System.Windows.Forms.Button CancelarButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Registrarbutton;
         private System.Windows.Forms.Label SysPrestamoslabel;
     }
 }
