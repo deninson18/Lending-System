@@ -56,16 +56,25 @@ namespace SystemPrestamos
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Cobradores cobrador = new Cobradores();
-            int id;
-            int.TryParse(CobradorIdtextBox.Text,out id);
-            cobrador.Buscar(id);
-            CobradorIdtextBox.Text = cobrador.CobradorId.ToString();
-            NombretextBox.Text = cobrador.Nombre;
-            ApellidotextBox.Text = cobrador.Apellido;
-            DirecciontextBox.Text = cobrador.Direccion;
-            TelefonotextBox.Text = cobrador.Telefono;
-            CelulartextBox.Text = cobrador.Celular;
-            CedulatextBox.Text = cobrador.Celular;
+            if (CobradorIdtextBox.TextLength == 0)
+            {
+                ErrorProvider error = new ErrorProvider();
+                error.Clear();
+                error.SetError(CobradorIdtextBox, "Debe especificar el id");
+            }
+            else
+            {
+                int id;
+                int.TryParse(CobradorIdtextBox.Text, out id);
+                cobrador.Buscar(id);
+                CobradorIdtextBox.Text = cobrador.CobradorId.ToString();
+                NombretextBox.Text = cobrador.Nombre;
+                ApellidotextBox.Text = cobrador.Apellido;
+                DirecciontextBox.Text = cobrador.Direccion;
+                TelefonotextBox.Text = cobrador.Telefono;
+                CelulartextBox.Text = cobrador.Celular;
+                CedulatextBox.Text = cobrador.Cedula;
+            }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

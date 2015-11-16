@@ -33,6 +33,14 @@ namespace BLL
             this.RutaId = 0;
         }
 
+        public Cobradores(int cobradorId, string nombre)
+        {
+            this.CobradorId = cobradorId;
+            this.Nombre = nombre;
+            
+            
+        }
+
         public Cobradores(int cobradorid, string nombre, string apellido,string direccion,string telefono,string celular,string cedula, int rutaid)
         {
             this.CobradorId = cobradorid;
@@ -91,7 +99,7 @@ namespace BLL
         {
             DataTable dt = new DataTable();
             DataTable dtRuta = new DataTable();
-            dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular from Cobradores where CobradorId= {0} ", IdBuscado));
+            dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular,Cedula from Cobradores where CobradorId= {0} ", IdBuscado));
             if(dt.Rows.Count > 0)
             {
                 this.CobradorId = (int)dt.Rows[0]["CobradorId"];
@@ -100,6 +108,7 @@ namespace BLL
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
                 this.Telefono = dt.Rows[0]["Telefono"].ToString();
                 this.Celular = dt.Rows[0]["Celular"].ToString();
+                this.Cedula = dt.Rows[0]["Cedula"].ToString();
             }
             return dt.Rows.Count > 0;
         } 
@@ -110,8 +119,7 @@ namespace BLL
             if (!Orden.Equals(""))
                 ordenFinal = " orden by  " + Orden;
 
-            return conexion.ObtenerDatos(("Select " + Campos +
-                " from Cobradores where " + Condicion + ordenFinal));
+            return conexion.ObtenerDatos(("Select " + Campos + " from Cobradores where " + Condicion + ordenFinal));
         }
     }
 }

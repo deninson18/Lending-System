@@ -10,11 +10,7 @@ namespace BLL
 {
 
     public class Usuarios : ClaseMaestra
-    {
-        /* public string  Nombre { get; set; }
-         public string Apellido { get; set; }
-         public string Direccion { get; set; }
-         public int Telefono{ get; set; }*/
+    { 
 
         ConexionDb conexion = new ConexionDb();
 
@@ -22,41 +18,43 @@ namespace BLL
         public string Nombre { get; set; }
         public string NombreUsuario { get; set; }
         public string Contrasena { get; set; }
+        public string AreaUsuario { get; set; }
         public string Fecha { get; set; }
 
         public Usuarios()
         {
 
+            UsuarioId = 0;
             Nombre = "";
             NombreUsuario = "";
             Contrasena = "";
+            AreaUsuario = "";
             Fecha = "";
-            UsuarioId = 0;
         }
 
-        public Usuarios(string nombre, string nombreUsuario, string contrasena, string fecha, int usuarioId)
+        public Usuarios(string nombre, string nombreUsuario, string contrasena, string areaUsuario,string fecha, int usuarioId)
         {
             Nombre = nombre;
             NombreUsuario = nombreUsuario;
             Contrasena = contrasena;
+            AreaUsuario = areaUsuario;
             Fecha = fecha;
             UsuarioId = usuarioId;
         }
 
         public override bool Insertar()
         {
-            try
-            {
-                conexion.Ejecutar(String.Format("Insert Into Usuarios(Nombres,NombresUsuarios,Contrasena,Fecha) values('{0}','{1}','{2}','{3}')", this.Nombre, this.NombreUsuario, this.Contrasena, this.Fecha));
-                return true;
-            }
-            catch (Exception) { return false; }
+            
+                bool retorno = false;
+                retorno = conexion.Ejecutar(String.Format("Insert Into Usuarios(Nombres,NombresUsuarios,Contrasena,AreaUsuarios,Fecha) values('{0}','{1}','{2}','{3}','{4}')", this.Nombre, this.NombreUsuario, this.Contrasena, this.AreaUsuario,this.Fecha));
+                return retorno;
+           
         }
 
         public override bool Editar()
         {
             bool retorno = false;
-            conexion.Ejecutar(String.Format("Update Usuarios set Nombres='{0}',NombresUsuarios='{1}',Contrasena='{2}',Fecha='{3}'", this.Nombre, this.NombreUsuario, this.Contrasena, this.Fecha));
+            retorno = conexion.Ejecutar(String.Format("Update Usuarios set Nombres='{0}',NombresUsuarios='{1}',Contrasena='{2}',AreaUsuarios='{3}',Fecha='{4}'", this.Nombre, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.Fecha));
             return retorno;
         }
 
@@ -74,7 +72,7 @@ namespace BLL
 
             */
             bool retorno = false;
-            conexion.Ejecutar(String.Format("Delete from Usuarios where UsuarioId", this.UsuarioId));
+            retorno = conexion.Ejecutar(String.Format("Delete from Usuarios where UsuarioId={0}", this.UsuarioId));
             return retorno;
         }
 
@@ -92,8 +90,8 @@ namespace BLL
                 return false;
             }
 
-            /*
-                DataTable dt = new DataTable();
+           /*
+           DataTable dt = new DataTable();
            DataTable dtActores = new DataTable();
 
            dt = conexion.ObtenerDatos(String.Format("select  PeliculaId,Titulo,Descripcion,Ano,Calificacion,IMBD, CategoriaId,Foto,Video from Peliculas where PeliculaId='{0}'", IdBuscado));

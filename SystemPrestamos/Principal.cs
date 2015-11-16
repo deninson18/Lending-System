@@ -35,5 +35,11 @@ namespace SystemPrestamos
             RegistroCobradores cobrador = new RegistroCobradores();
             cobrador.Show();
         }
+
+        private void rutasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RegistroRutas ruta = new RegistroRutas();
+            ruta.Show();
+        }
     }
 }

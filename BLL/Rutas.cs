@@ -16,6 +16,9 @@ namespace BLL
         private int CobradorId { set; get;  }
         private string Detalle { set; get; }
         private int RutaId { set; get; }
+        private string Nombre { get; set; }
+
+        List<Cobradores> cobradores;
 
         public Rutas()
         {
@@ -23,7 +26,7 @@ namespace BLL
             this.CobradorId = 0;
             this.Detalle = "";
             this.RutaId = 0;
-            // Cobradores = new List<Cobradores>();
+            cobradores = new List<Cobradores>();
         }
 
         public Rutas(string nombreruta,int cobradorid,string detalle,int rutaid)
@@ -34,12 +37,12 @@ namespace BLL
             this.RutaId = rutaid;
         }
 
-        /*public List<Cobradores> Cobradores{ get; set; }
+       public List<Cobradores> Cobradores { get; set; }
 
        public void AgregarCobrador(int CobradorId, string Nombre)
        {
            this.Cobradores.Add(new Cobradores(CobradorId, Nombre));
-       }*/
+       }
 
         public override bool Insertar()
         {
@@ -72,6 +75,7 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
+            /*
             try
             {
                 DataTable datatable;
@@ -83,33 +87,33 @@ namespace BLL
             {
                 return false;
             }
-            /*
+            _____________________________________*/
                 DataTable dt = new DataTable();
                 DataTable dtCobradores = new DataTable();
 
             dt = conexion.ObtenerDatos(String.Format("select  NombreRuta,CobradorId,RutaDetalle from Rutas where RutaId='{0}'", IdBuscado));
             if (dt.Rows.Count > 0)
             {
-                this.PeliculaId = (int)dt.Rows[0]["PeliculaId"];
-                this.Titulo = dt.Rows[0]["Titulo"].ToString();
-                this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
-                this.Ano = (int)dt.Rows[0]["Ano"];
-                this.Calificacion = (int)dt.Rows[0]["Calificacion"];
+                
+                this.NombreRuta = dt.Rows[0]["NombreRuta"].ToString();
+                this.CobradorId = (int)dt.Rows[0]["CobradorId"];
+                this.Detalle = dt.Rows[0]["RutaDetalle"].ToString();
+                this.RutaId = (int)dt.Rows[0]["RutaId"];
 
 
-                dtCobradores = conexion.ObtenerDatos("Select p.ActorId,a.Nombre " +
-                                                    "From Rutas p " +
-                                                    "Inner Join Cobradores a On p.RutaId=a.CobradorId" +
-                                                    "Where p.RutaId=" + this.CobradorId);
+                dtCobradores = conexion.ObtenerDatos("Select c.CobradorId, r.Nombre" +
+                                                    "From Rutas r " +
+                                                    "Inner Join Cobradores r On c.CobradorId=r.CobradorId" +
+                                                    "Where r.RutaId=" + this.RutaId);
 
                 foreach (DataRow row in dtCobradores.Rows)
                 {
-                    this.AgregarCobrador((int)row["CobradorId"], row["Nombre"].ToString());
+                    this.AgregarCobrador( (int)row["CobradorId"], row["Nombre"].ToString());
                 }
             }
 
                 return dt.Rows.Count > 0;
-            */
+            
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
