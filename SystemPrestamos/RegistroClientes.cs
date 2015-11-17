@@ -159,9 +159,105 @@ namespace SystemPrestamos
             }
         }
 
-   
+        private void sexoCcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
- 
+        }
+
+        private void celularCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void telefonoCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void referenciaCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void direccionCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cedulaCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void apodoCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void apellidoCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nombreCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void FemeninoradioButton_CheckedChanged(object sender, EventArgs e)
         {

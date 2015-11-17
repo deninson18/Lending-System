@@ -291,7 +291,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Image = global::SystemPrestamos.Properties.Resources._1442278118_save;
+            this.Guardarbutton.Image = global::SystemPrestamos.Properties.Resources._1443952702_document_save_as;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(271, 388);
             this.Guardarbutton.Name = "Guardarbutton";
