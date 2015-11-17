@@ -20,13 +20,20 @@ namespace SystemPrestamos
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            RegistroUsuario usuario = new RegistroUsuario();
+            usuario.Show();
         }
 
         private void rutasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroClientes cliente = new RegistroClientes();
-            cliente.Show();
+            RegistroClientes registro = new RegistroClientes();
+            registro.Show();
+        }
+
+        private void cobradoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RegistroCobradores cobrador = new RegistroCobradores();
+            cobrador.Show();
         }
     }
 }

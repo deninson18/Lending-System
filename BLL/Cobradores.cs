@@ -54,40 +54,60 @@ namespace BLL
         }*/
         public override bool Insertar()
         {
-            bool retorno = false;
-            conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula,RutaId) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula,this.RutaId));
-            return retorno;
+            try
+            {
+                bool retorno = false;
+                retorno=conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula));
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public override bool Editar()
         {
-            bool retorno = false;
-            conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}',RutaId='{6}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula, this.RutaId));
-            return retorno;
+           
+            try
+            {
+                bool retorno = false;
+                retorno= conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula));
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public override bool Eliminar()
         {
-            bool retorno = false;
-            conexion.Ejecutar(String.Format("Delete from Cobradores where CobradorId",this.CobradorId));
-            return retorno;
+            try {
+
+                bool retorno = false;
+                retorno = conexion.Ejecutar(String.Format("delete from Cobradores where CobradorId={0}", this.CobradorId));
+                return retorno;
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
         }
         public override bool Buscar(int IdBuscado)
         {
-            bool retorno = false;
             DataTable dt = new DataTable();
             DataTable dtRuta = new DataTable();
-            dt = conexion.ObtenerDatos(String.Format("Select Nombres,Apellidos, Direccion,Telefono,Celular,Cedula,RutaId from Cobradores where CobradorId='{0}'", IdBuscado));
+            dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular from Cobradores where CobradorId= {0} ", IdBuscado));
             if(dt.Rows.Count > 0)
             {
+                this.CobradorId = (int)dt.Rows[0]["CobradorId"];
                 this.Nombre = dt.Rows[0]["Nombres"].ToString();
                 this.Apellido = dt.Rows[0]["Apellidos"].ToString();
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
                 this.Telefono = dt.Rows[0]["Telefono"].ToString();
                 this.Celular = dt.Rows[0]["Celular"].ToString();
-                this.RutaId = (int)dt.Rows[0]["RutaId"];
-            } 
-            return retorno;
+            }
+            return dt.Rows.Count > 0;
         } 
          
         public override DataTable Listado(string Campos, string Condicion, string Orden)
