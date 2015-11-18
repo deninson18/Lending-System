@@ -89,7 +89,7 @@ namespace BLL
                 this.AreaUsuario = datatable.Rows[0]["AreaUsuarios"].ToString();
                 }
                 return datatable.Rows.Count > 0;
-            
+              
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
