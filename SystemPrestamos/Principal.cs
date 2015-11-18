@@ -20,7 +20,7 @@ namespace SystemPrestamos
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            RegistroUsuario usuario = new RegistroUsuario();
+            RegistroUsuarios usuario = new RegistroUsuarios();
             usuario.Show();
         }
 
