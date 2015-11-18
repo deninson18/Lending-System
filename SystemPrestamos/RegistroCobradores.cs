@@ -33,7 +33,11 @@ namespace SystemPrestamos
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            if (NombretextBox.TextLength > 0 && ApellidotextBox.TextLength > 0)
+            if (NombretextBox.TextLength == 0 || ApellidotextBox.TextLength == 0 || DirecciontextBox.TextLength == 0 || TelefonotextBox.TextLength == 0 || CelulartextBox.TextLength == 0 || CedulatextBox.TextLength == 0)
+            {
+                MessageBox.Show("El campo debe estar lleno ");
+            }else
+            if(CobradorIdtextBox.TextLength == 0)
             {
                 cobra.Nombre = NombretextBox.Text;
                 cobra.Apellido = ApellidotextBox.Text;
@@ -50,6 +54,24 @@ namespace SystemPrestamos
                 {
                     MessageBox.Show("Cobrador no se agrego Correctamente");
                 }
+            }else
+                if (CobradorIdtextBox.TextLength > 0)
+                {
+                    cobra.Nombre = NombretextBox.Text;
+                    cobra.Apellido = ApellidotextBox.Text;
+                    cobra.Direccion = DirecciontextBox.Text;
+                    cobra.Telefono = TelefonotextBox.Text;
+                    cobra.Celular = CelulartextBox.Text;
+                    cobra.Cedula = CedulatextBox.Text;
+
+                    if (cobra.Editar())
+                    {
+                        MessageBox.Show("Cobrador se agrego Correctamente");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cobrador no se agrego Correctamente");
+                    }
             }
         }
 

@@ -44,23 +44,15 @@ namespace SystemPrestamos
         private void IniciarButton_Click(object sender, EventArgs e)
         {
             Usuarios user = new Usuarios();
-
-            //user.NombreUsuario = usuarioTextBox.Text;
-            //user.Contrasena = ContrasenaTextBox.Text;
-             if (usuarioTextBox.Text == "deninson" && ContrasenaTextBox.Text=="12345")
-             {
-                 Principal menu =new Principal();
-                 menu.Show();
-             }
-             else
-             {
-                 MessageBox.Show("Usuario o Contraseña Incorrectas");
-             }
-        }
-
-        private void Registrarbutton_Click(object sender, EventArgs e)
-        {
-            
+            if (user.Login(usuarioTextBox.Text, ContrasenaTextBox.Text) == true)
+            {
+                Principal menu = new Principal();
+                menu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña Incorrectas");
+            }
         }
     }
 }

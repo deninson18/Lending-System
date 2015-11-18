@@ -59,7 +59,7 @@ namespace BLL
             try
             {
                 bool retorno = false;
-                conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula));
+                retorno = conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula));
                 return retorno;
             }
             catch (Exception ex)
@@ -74,7 +74,7 @@ namespace BLL
             try
             {
                 bool retorno = false;
-                conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula));
+                retorno = conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula));
                 return retorno;
             }
             catch (Exception ex)
@@ -88,7 +88,7 @@ namespace BLL
             try {
                 bool retorno = false;
                 ConexionDb conexion = new ConexionDb();
-                conexion.Ejecutar(String.Format("Delete from Cobradores where CobradorId={0}", this.CobradorId));
+                retorno = conexion.Ejecutar(String.Format("Delete from Cobradores where CobradorId={0}", this.CobradorId));
                 return retorno;
             }catch(Exception ex)
             {

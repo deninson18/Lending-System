@@ -6,11 +6,11 @@ select * from Usuarios;select * from Rutas;select * from Cobradores;select * fro
 drop table Usuarios;drop table Rutas;drop table Cobradores;drop table Clientes;drop table Prestamos;drop table Atrasos;
 
 create table Usuarios(UsuarioId int identity primary key,
-Nombres varchar(30),NombresUsuarios varchar(40),AreaUsuarios varchar(10),
-Contrasena varchar(50),Fecha date);
+Nombres varchar(30),NombresUsuarios varchar(40),AreaUsuarios varchar(30),
+Contrasena varchar(50),Fecha varchar(30));
 
-insert into Usuarios(Nombres,NombresUsuarios,Contrasena,Fecha) values('Nrp', 'the last', '1234anrp','12-03-2015');
-delete from Usuarios where UsuarioId=2 ;
+insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Natanael', 'elnata93', 'Administrador','nrpabc','12-03-2015');
+delete from Usuarios where UsuarioId=6 ;
 
 create table Rutas(RutaId int identity primary key,
 NombreRuta varchar(100),CobradorId int references Cobradores(CobradorId),RutaDetalle varchar(200));

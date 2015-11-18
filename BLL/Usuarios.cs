@@ -78,45 +78,18 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            try
-            {
-                DataTable datatable;
-                datatable = conexion.ObtenerDatos(String.Format("select * from Usuarios whele UsuarioId = {0}", UsuarioId));
-                this.Nombre = datatable.Rows[0]["Nombre"].ToString();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-           /*
-           DataTable dt = new DataTable();
-           DataTable dtActores = new DataTable();
-
-           dt = conexion.ObtenerDatos(String.Format("select  PeliculaId,Titulo,Descripcion,Ano,Calificacion,IMBD, CategoriaId,Foto,Video from Peliculas where PeliculaId='{0}'", IdBuscado));
-           if (dt.Rows.Count > 0)
-           {
-               this.PeliculaId = (int)dt.Rows[0]["PeliculaId"];
-               this.Titulo = dt.Rows[0]["Titulo"].ToString();
-               this.Descripcion = dt.Rows[0]["Descripcion"].ToString();
-               this.Ano = (int)dt.Rows[0]["Ano"];
-               this.Calificacion = (int)dt.Rows[0]["Calificacion"];
-
-
-               dtActores = conexion.ObtenerDatos("Select p.ActorId,a.Nombre " +
-                                                   "From PeliculasActores p " +
-                                                   "Inner Join Actores a On p.ActorId=a.ActorId" +
-                                                   "Where p.PeliculaId=" + this.PeliculaId);
-
-               foreach (DataRow row in dtActores.Rows)
-               {
-                   this.AgregarActor((int)row["ActorId"], row["Nombre"].ToString());
-               }
-           }
-
-               return dt.Rows.Count > 0;
-           */
+                DataTable datatable = new DataTable();
+                datatable = conexion.ObtenerDatos(String.Format("select  UsuarioId,Nombres,NombresUsuarios,Contrasena,AreaUsuarios,Fecha from Usuarios where UsuarioId= {0} ", IdBuscado));
+                if(datatable.Rows.Count > 0)
+                {
+                    this.UsuarioId = (int)datatable.Rows[0]["UsuarioId"];
+                this.Nombre = datatable.Rows[0]["Nombres"].ToString();
+                this.NombreUsuario = datatable.Rows[0]["NombresUsuarios"].ToString();
+                this.Contrasena = datatable.Rows[0]["Contrasena"].ToString();
+                this.AreaUsuario = datatable.Rows[0]["AreaUsuarios"].ToString();
+                }
+                return datatable.Rows.Count > 0;
+            
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
@@ -126,6 +99,17 @@ namespace BLL
                 ordenFinal = " orden by  " + Orden;
 
             return conexion.ObtenerDatos(("Select " + Campos + " from Usuarios where " + Condicion + ordenFinal));
+        }
+
+        public bool Login(string nombre, string contrasena)
+        {
+               DataTable datatable = new DataTable();
+               datatable = conexion.ObtenerDatos(String.Format("select  NombresUsuarios from Usuarios where NombresUsuarios = '{0}' and  Contrasena = '{1}'",nombre,contrasena));
+               if (datatable.Rows.Count > 0)
+               {
+                return true;
+               }
+            return false;
         }
     }
 }
