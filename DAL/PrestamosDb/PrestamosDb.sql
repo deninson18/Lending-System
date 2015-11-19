@@ -10,7 +10,7 @@ Nombres varchar(30),NombresUsuarios varchar(40),AreaUsuarios varchar(30),
 Contrasena varchar(50),Fecha varchar(30));
 
 insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Natanael', 'elnata93', 'Administrador','nrpabc','12-03-2015');
-delete from Usuarios where UsuarioId=6 ;
+delete from Cobradores where CobradorId=2;
 
 create table Rutas(RutaId int identity primary key,
 NombreRuta varchar(100),CobradorId int references Cobradores(CobradorId),RutaDetalle varchar(200));

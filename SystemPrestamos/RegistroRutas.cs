@@ -43,6 +43,7 @@ namespace SystemPrestamos
             {
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
+                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.Text);
 
                 if (ruta.Insertar())
                 {
@@ -55,12 +56,14 @@ namespace SystemPrestamos
                 }
 
              }else if(RutaIdtextBox.TextLength > 0)
+
             {
                 int id;
-                 int.TryParse(RutaIdtextBox.Text, out id);
+                int.TryParse(RutaIdtextBox.Text, out id);
                 ruta.RutaId = id;
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
+                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.Text);
             }
             if (ruta.Editar())
             {
@@ -113,7 +116,7 @@ namespace SystemPrestamos
         {
             Cobradores cobrador = new Cobradores();
             CobradorIdcomboBox.DataSource = cobrador.Listado("*","1=1","");
-            CobradorIdcomboBox.DisplayMember = "Nombres";
+            CobradorIdcomboBox.DisplayMember = "CobradorId";
             CobradorIdcomboBox.ValueMember = "CobradorId";
         }
     }

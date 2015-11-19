@@ -50,7 +50,7 @@ namespace BLL
             try
             {
                 bool retorno = false;
-                retorno = conexion.Ejecutar(String.Format("Insert Into Rutas(NombreRuta,CobradorId,RutaDetalle) values('{0}','{1}','{2}')",this.NombreRuta,this.CobradorId,this.Detalle));
+                retorno = conexion.Ejecutar(String.Format("Insert Into Rutas(NombreRuta,RutaDetalle,CobradorId) values('{0}','{1}','{2}')",this.NombreRuta,this.Detalle,this.CobradorId));
                 return retorno;
 
             }catch(Exception ex)
