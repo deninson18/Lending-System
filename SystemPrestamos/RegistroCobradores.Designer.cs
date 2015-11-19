@@ -47,6 +47,7 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Registrolabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -208,11 +209,22 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // Registrolabel
+            // 
+            this.Registrolabel.AutoSize = true;
+            this.Registrolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Registrolabel.Location = new System.Drawing.Point(226, 43);
+            this.Registrolabel.Name = "Registrolabel";
+            this.Registrolabel.Size = new System.Drawing.Size(302, 31);
+            this.Registrolabel.TabIndex = 23;
+            this.Registrolabel.Text = "Registro de Cobradores";
+            // 
             // RegistroCobradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 413);
+            this.Controls.Add(this.Registrolabel);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -260,5 +272,6 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Label Registrolabel;
     }
 }

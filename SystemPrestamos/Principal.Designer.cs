@@ -111,6 +111,7 @@
             this.rutasToolStripMenuItem1.Name = "rutasToolStripMenuItem1";
             this.rutasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.rutasToolStripMenuItem1.Text = "Rutas";
+            this.rutasToolStripMenuItem1.Click += new System.EventHandler(this.rutasToolStripMenuItem1_Click);
             // 
             // atrasosToolStripMenuItem
             // 

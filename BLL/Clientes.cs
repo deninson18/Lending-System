@@ -90,7 +90,7 @@ namespace BLL
             try { 
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(string.Format("delete from Clientes where ClienteId={0}",this.ClienteId));
+            conexion.Ejecutar(string.Format("delete from Clientes where ClienteId={0}",this.ClienteId));
             return retorno;
             }
             catch (Exception ex)

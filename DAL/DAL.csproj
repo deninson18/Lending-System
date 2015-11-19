@@ -43,6 +43,7 @@
     <Compile Include="ConexionDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="PrestamosDb\PrestamosDb.sql" />
   </ItemGroup>

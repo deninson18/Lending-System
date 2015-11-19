@@ -73,16 +73,6 @@ namespace SystemPrestamos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1442278118_save {
-            get {
-                object obj = ResourceManager.GetObject("1442278118_save", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1442278645_Log_Out {
             get {
                 object obj = ResourceManager.GetObject("1442278645_Log Out", resourceCulture);
@@ -136,6 +126,16 @@ namespace SystemPrestamos.Properties {
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap personal_information_98356 {
+            get {
+                object obj = ResourceManager.GetObject("personal_information_98356", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

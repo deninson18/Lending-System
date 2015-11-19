@@ -78,11 +78,17 @@
     <Compile Include="RegistroCobradores.Designer.cs">
       <DependentUpon>RegistroCobradores.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistroUsuario.cs">
+    <Compile Include="RegistroRutas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroUsuario.Designer.cs">
-      <DependentUpon>RegistroUsuario.cs</DependentUpon>
+    <Compile Include="RegistroRutas.Designer.cs">
+      <DependentUpon>RegistroRutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroUsuarios.Designer.cs">
+      <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Consultas\ConsultaClientes.resx">
       <DependentUpon>ConsultaClientes.cs</DependentUpon>
@@ -105,6 +111,15 @@
     </Compile>
     <EmbeddedResource Include="RegistroClientes.resx">
       <DependentUpon>RegistroClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroCobradores.resx">
+      <DependentUpon>RegistroCobradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroRutas.resx">
+      <DependentUpon>RegistroRutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroUsuarios.resx">
+      <DependentUpon>RegistroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -137,10 +152,7 @@
     <None Include="Resources\1442277587_search.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1447451639_Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1447451709_close.png" />
+    <None Include="Resources\personal_information_98356.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

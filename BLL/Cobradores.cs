@@ -31,7 +31,14 @@ namespace BLL
             this.Celular = "";
             this.Cedula = "";
             this.RutaId = 0;
-           // Rutas = new List<Rutas>();
+        }
+
+        public Cobradores(int cobradorId, string nombre)
+        {
+            this.CobradorId = cobradorId;
+            this.Nombre = nombre;
+            
+            
         }
 
         public Cobradores(int cobradorid, string nombre, string apellido,string direccion,string telefono,string celular,string cedula, int rutaid)
@@ -46,20 +53,15 @@ namespace BLL
             this.RutaId = rutaid;
         }
 
-        /*public List<Rutas> Rutas { get; set; }
 
-        public void AgregarRuta(int RutaId, string NombreRuta)
-        {
-            this.Rutas.Add(new Rutas(RutaId, NombreRuta));
-        }*/
         public override bool Insertar()
         {
             try
             {
-                bool retorno = false;
-                retorno=conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula));
-                return retorno;
-            }
+            bool retorno = false;
+                retorno = conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula));
+            return retorno;
+        }
             catch (Exception ex)
             {
                 throw ex;
@@ -71,10 +73,10 @@ namespace BLL
            
             try
             {
-                bool retorno = false;
-                retorno= conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula));
-                return retorno;
-            }
+            bool retorno = false;
+                retorno = conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula));
+            return retorno;
+        }
             catch (Exception ex)
             {
                 throw ex;
@@ -84,10 +86,10 @@ namespace BLL
         public override bool Eliminar()
         {
             try {
-
-                bool retorno = false;
-                retorno = conexion.Ejecutar(String.Format("delete from Cobradores where CobradorId={0}", this.CobradorId));
-                return retorno;
+            bool retorno = false;
+                ConexionDb conexion = new ConexionDb();
+                retorno = conexion.Ejecutar(String.Format("Delete from Cobradores where CobradorId={0}", this.CobradorId));
+            return retorno;
             }catch(Exception ex)
             {
                 throw ex;
@@ -97,7 +99,7 @@ namespace BLL
         {
             DataTable dt = new DataTable();
             DataTable dtRuta = new DataTable();
-            dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular from Cobradores where CobradorId= {0} ", IdBuscado));
+            dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular,Cedula from Cobradores where CobradorId= {0} ", IdBuscado));
             if(dt.Rows.Count > 0)
             {
                 this.CobradorId = (int)dt.Rows[0]["CobradorId"];
@@ -106,7 +108,8 @@ namespace BLL
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
                 this.Telefono = dt.Rows[0]["Telefono"].ToString();
                 this.Celular = dt.Rows[0]["Celular"].ToString();
-            }
+                this.Cedula = dt.Rows[0]["Cedula"].ToString();
+            } 
             return dt.Rows.Count > 0;
         } 
          
@@ -116,8 +119,7 @@ namespace BLL
             if (!Orden.Equals(""))
                 ordenFinal = " orden by  " + Orden;
 
-            return conexion.ObtenerDatos(("Select " + Campos +
-                " from Cobradores where " + Condicion + ordenFinal));
+            return conexion.ObtenerDatos(("Select " + Campos + " from Cobradores where " + Condicion + ordenFinal));
         }
     }
 }
