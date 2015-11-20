@@ -41,6 +41,7 @@
             this.CobradorIdlabel = new System.Windows.Forms.Label();
             this.CobradorIdcomboBox = new System.Windows.Forms.ComboBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.IdCobradorbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Nuevobutton
@@ -71,6 +72,7 @@
             this.Eliminarbutton.TabIndex = 2;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Registrolabel
             // 
@@ -158,11 +160,22 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // IdCobradorbutton
+            // 
+            this.IdCobradorbutton.Location = new System.Drawing.Point(293, 247);
+            this.IdCobradorbutton.Name = "IdCobradorbutton";
+            this.IdCobradorbutton.Size = new System.Drawing.Size(75, 23);
+            this.IdCobradorbutton.TabIndex = 34;
+            this.IdCobradorbutton.Text = "Buscar";
+            this.IdCobradorbutton.UseVisualStyleBackColor = true;
+            this.IdCobradorbutton.Click += new System.EventHandler(this.IdCobradorbutton_Click);
+            // 
             // RegistroRutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 351);
+            this.Controls.Add(this.IdCobradorbutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.CobradorIdcomboBox);
             this.Controls.Add(this.CobradorIdlabel);
@@ -178,6 +191,7 @@
             this.Controls.Add(this.Nuevobutton);
             this.Name = "RegistroRutas";
             this.Text = "RegistroRutas";
+            this.Load += new System.EventHandler(this.RegistroRutas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +212,6 @@
         private System.Windows.Forms.Label CobradorIdlabel;
         private System.Windows.Forms.ComboBox CobradorIdcomboBox;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Button IdCobradorbutton;
     }
 }

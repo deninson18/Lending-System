@@ -13,44 +13,45 @@ namespace BLL
         ConexionDb conexion = new ConexionDb();
 
         public int CobradorId { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public string Cedula { get; set; }
-        public int RutaId { get; set; }
+       
 
         public Cobradores()
         {
             this.CobradorId = 0;
-            this.Nombre = "";
-            this.Apellido = "";
+            this.Nombres = "";
+            this.Apellidos = "";
             this.Direccion = "";
             this.Telefono = "";
             this.Celular = "";
             this.Cedula = "";
-            this.RutaId = 0;
+            
         }
 
-        public Cobradores(int cobradorId, string nombre)
+        public Cobradores(int cobradorId, string Nombres,string Apellidos)
         {
-            this.CobradorId = cobradorId;
-            this.Nombre = nombre;
+            this.CobradorId = CobradorId;
+            this.Nombres = Nombres;
+            this.Apellidos = Apellidos;
             
             
         }
 
-        public Cobradores(int cobradorid, string nombre, string apellido,string direccion,string telefono,string celular,string cedula, int rutaid)
+        public Cobradores(int cobradorid, string nombres, string apellidos,string direccion,string telefono,string celular,string cedula, int rutaid)
         {
             this.CobradorId = cobradorid;
-            this.Nombre = nombre;
-            this.Apellido = apellido;
+            this.Nombres = nombres;
+            this.Apellidos = apellidos;
             this.Direccion = direccion;
             this.Telefono = telefono;
             this.Celular = celular;
             this.Cedula = cedula;
-            this.RutaId = rutaid;
+            
         }
 
 
@@ -59,7 +60,7 @@ namespace BLL
             try
             {
             bool retorno = false;
-                retorno = conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombre,this.Apellido,this.Direccion,this.Telefono,this.Celular,this.Cedula));
+                retorno = conexion.Ejecutar(String.Format("Insert Into Cobradores(Nombres,Apellidos, Direccion,Telefono,Celular,Cedula) values('{0}','{1}','{2}','{3}','{4}','{5}')",this.Nombres,this.Apellidos,this.Direccion,this.Telefono,this.Celular,this.Cedula));
             return retorno;
         }
             catch (Exception ex)
@@ -74,7 +75,7 @@ namespace BLL
             try
             {
             bool retorno = false;
-                retorno = conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombre, this.Apellido, this.Direccion, this.Telefono, this.Celular, this.Cedula));
+                retorno = conexion.Ejecutar(String.Format("Update Cobradores set Nombres='{0}',Apellidos='{1}', Direccion='{2}',Telefono='{3}',Celular='{4}',Cedula='{5}'", this.Nombres, this.Apellidos, this.Direccion, this.Telefono, this.Celular, this.Cedula));
             return retorno;
         }
             catch (Exception ex)
@@ -103,8 +104,8 @@ namespace BLL
             if(dt.Rows.Count > 0)
             {
                 this.CobradorId = (int)dt.Rows[0]["CobradorId"];
-                this.Nombre = dt.Rows[0]["Nombres"].ToString();
-                this.Apellido = dt.Rows[0]["Apellidos"].ToString();
+                this.Nombres = dt.Rows[0]["Nombres"].ToString();
+                this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
                 this.Direccion = dt.Rows[0]["Direccion"].ToString();
                 this.Telefono = dt.Rows[0]["Telefono"].ToString();
                 this.Celular = dt.Rows[0]["Celular"].ToString();

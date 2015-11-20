@@ -16,7 +16,7 @@ namespace DAL
 
         public ConexionDb() 
         {
-            conexion = new SqlConnection("Data Source=WALLE\\SQLEXPRESS;Initial Catalog=PrestamosDb;Integrated Security=True");
+            conexion = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=PrestamosDb;Integrated Security=True");
             cmd = new SqlCommand();
         }
 

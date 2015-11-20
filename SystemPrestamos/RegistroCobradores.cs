@@ -39,8 +39,8 @@ namespace SystemPrestamos
             }else
             if(CobradorIdtextBox.TextLength == 0)
             {
-                cobra.Nombre = NombretextBox.Text;
-                cobra.Apellido = ApellidotextBox.Text;
+                cobra.Nombres = NombretextBox.Text;
+                cobra.Apellidos = ApellidotextBox.Text;
                 cobra.Direccion = DirecciontextBox.Text;
                 cobra.Telefono = TelefonotextBox.Text;
                 cobra.Celular = CelulartextBox.Text;
@@ -57,8 +57,8 @@ namespace SystemPrestamos
             }else
                 if (CobradorIdtextBox.TextLength > 0)
                 {
-                    cobra.Nombre = NombretextBox.Text;
-                    cobra.Apellido = ApellidotextBox.Text;
+                    cobra.Nombres = NombretextBox.Text;
+                    cobra.Apellidos = ApellidotextBox.Text;
                     cobra.Direccion = DirecciontextBox.Text;
                     cobra.Telefono = TelefonotextBox.Text;
                     cobra.Celular = CelulartextBox.Text;
@@ -90,8 +90,8 @@ namespace SystemPrestamos
                 int.TryParse(CobradorIdtextBox.Text, out id);
                 cobrador.Buscar(id);
                 CobradorIdtextBox.Text = cobrador.CobradorId.ToString();
-                NombretextBox.Text = cobrador.Nombre;
-                ApellidotextBox.Text = cobrador.Apellido;
+                NombretextBox.Text = cobrador.Nombres;
+                ApellidotextBox.Text = cobrador.Apellidos;
                 DirecciontextBox.Text = cobrador.Direccion;
                 TelefonotextBox.Text = cobrador.Telefono;
                 CelulartextBox.Text = cobrador.Celular;

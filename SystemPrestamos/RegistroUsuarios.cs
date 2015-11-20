@@ -66,13 +66,13 @@ namespace SystemPrestamos
                     user.AreaUsuario = AreaUsuariotextBox.Text;
                     user.Fecha = dateTimePicker.Text;
 
-                    if (user.Insertar())
+                    if (user.Editar())
                     {
-                        MessageBox.Show("Usuario guardado Correctamente");
+                        MessageBox.Show("Usuario Edito Correctamente");
                     }
                     else
                     {
-                        MessageBox.Show("Error! no se guardo el Usuario");
+                        MessageBox.Show("Error! no se ha Editado el Usuario");
                     }
                 }
         }

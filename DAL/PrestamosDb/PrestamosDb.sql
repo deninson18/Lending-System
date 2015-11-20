@@ -36,3 +36,5 @@ RutaId int,NombreRuta varchar(100),Capital float,Cuotas float,Interes float,
 TipodePrestamo varchar(15));
                             
 create table Atrasos(AtrasoId int identity primary key,CantidadAtraso int);
+
+select c.CobradorId, c.Nombres,c.Apellidos from Cobradores c inner join Rutas r on c.CobradorId = r.CobradorId;
