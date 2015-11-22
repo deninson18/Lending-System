@@ -71,8 +71,9 @@ namespace BLL
         {
             try
             {
-                conexion.Ejecutar(String.Format("Delete from Rutas(NombreRuta,CobradorId,RutaDetalle) where RutaId)", this.RutaId));
-                return true;
+                bool retorno = false;
+                retorno = conexion.Ejecutar(String.Format("Delete from Rutas(NombreRuta,CobradorId,RutaDetalle) where RutaId)", this.RutaId));
+                return retorno=true;
             }
             catch (Exception) { return false; }
         }

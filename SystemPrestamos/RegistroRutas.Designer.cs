@@ -48,7 +48,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(87, 305);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
-            this.Nuevobutton.TabIndex = 0;
+            this.Nuevobutton.TabIndex = 15;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
@@ -58,7 +58,7 @@
             this.Guardarbutton.Location = new System.Drawing.Point(193, 305);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Guardarbutton.TabIndex = 1;
+            this.Guardarbutton.TabIndex = 17;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
@@ -97,7 +97,7 @@
             this.RutaIdtextBox.Location = new System.Drawing.Point(34, 81);
             this.RutaIdtextBox.Name = "RutaIdtextBox";
             this.RutaIdtextBox.Size = new System.Drawing.Size(234, 20);
-            this.RutaIdtextBox.TabIndex = 26;
+            this.RutaIdtextBox.TabIndex = 0;
             this.RutaIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RutaIdtextBox_KeyPress);
             // 
             // NombreRutalabel
@@ -114,7 +114,7 @@
             this.NombreRutatextBox.Location = new System.Drawing.Point(34, 138);
             this.NombreRutatextBox.Name = "NombreRutatextBox";
             this.NombreRutatextBox.Size = new System.Drawing.Size(234, 20);
-            this.NombreRutatextBox.TabIndex = 28;
+            this.NombreRutatextBox.TabIndex = 8;
             // 
             // RutaDetallelabel
             // 
@@ -130,7 +130,7 @@
             this.RutaDetalletextBox.Location = new System.Drawing.Point(34, 196);
             this.RutaDetalletextBox.Name = "RutaDetalletextBox";
             this.RutaDetalletextBox.Size = new System.Drawing.Size(234, 20);
-            this.RutaDetalletextBox.TabIndex = 30;
+            this.RutaDetalletextBox.TabIndex = 10;
             // 
             // CobradorIdlabel
             // 
@@ -148,14 +148,14 @@
             this.CobradorIdcomboBox.Location = new System.Drawing.Point(34, 249);
             this.CobradorIdcomboBox.Name = "CobradorIdcomboBox";
             this.CobradorIdcomboBox.Size = new System.Drawing.Size(234, 21);
-            this.CobradorIdcomboBox.TabIndex = 32;
+            this.CobradorIdcomboBox.TabIndex = 12;
             // 
             // Buscarbutton
             // 
             this.Buscarbutton.Location = new System.Drawing.Point(293, 79);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(75, 22);
-            this.Buscarbutton.TabIndex = 33;
+            this.Buscarbutton.TabIndex = 5;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);

@@ -25,7 +25,7 @@ namespace SystemPrestamos
             RutaIdtextBox.Clear();
             NombreRutatextBox.Clear();
             RutaDetalletextBox.Clear();
-            CobradorIdcomboBox.Items.Clear();
+            CobradorIdcomboBox.SelectedIndex = 0;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -43,19 +43,19 @@ namespace SystemPrestamos
             {
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
-                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.Text);
+                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.SelectedValue);
 
                 if (ruta.Insertar())
                 {
                     MessageBox.Show("Ruta ha sido Registrada");
-
                 }
                 else
                 {
                     MessageBox.Show("Ruta no ha podido ser Registrada");
                 }
 
-             }else if(RutaIdtextBox.TextLength > 0)
+            }
+            else if (RutaIdtextBox.TextLength > 0)
 
             {
                 int id;
@@ -63,18 +63,18 @@ namespace SystemPrestamos
                 ruta.RutaId = id;
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
-                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.Text);
-            }
-            if (ruta.Editar())
-            {
-                MessageBox.Show("Ruta ha sido Editada");
+                ruta.CobradorId = (int)CobradorIdcomboBox.SelectedValue;
 
-            }
-            else
-            {
-                MessageBox.Show("Ruta no ha sido Editada Correctamente");
-            }
+                if (ruta.Editar())
+                {
+                    MessageBox.Show("Ruta ha sido Editada");
 
+                }
+                else
+                {
+                    MessageBox.Show("Ruta no ha sido Editada Correctamente");
+                }
+            }
         }
 
         private int TryParse(int textLength, out int id)
@@ -116,7 +116,7 @@ namespace SystemPrestamos
         {
             Cobradores cobrador = new Cobradores();
             CobradorIdcomboBox.DataSource = cobrador.Listado("*","1=1","");
-            CobradorIdcomboBox.DisplayMember = "CobradorId";
+            CobradorIdcomboBox.DisplayMember = "Nombres";
             CobradorIdcomboBox.ValueMember = "CobradorId";
         }
 
