@@ -289,7 +289,7 @@
             // 
             this.Eliminarbutton.Image = global::SystemPrestamos.Properties.Resources._1447451709_close;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(347, 388);
+            this.Eliminarbutton.Location = new System.Drawing.Point(348, 388);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(64, 57);
             this.Eliminarbutton.TabIndex = 20;
