@@ -134,6 +134,7 @@
             this.idCtextBox.Name = "idCtextBox";
             this.idCtextBox.Size = new System.Drawing.Size(100, 20);
             this.idCtextBox.TabIndex = 8;
+            this.idCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCtextBox_KeyPress);
             // 
             // nombreCtextBox
             // 
@@ -141,6 +142,8 @@
             this.nombreCtextBox.Name = "nombreCtextBox";
             this.nombreCtextBox.Size = new System.Drawing.Size(287, 20);
             this.nombreCtextBox.TabIndex = 9;
+            this.nombreCtextBox.TextChanged += new System.EventHandler(this.nombreCtextBox_TextChanged_1);
+            this.nombreCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreCtextBox_KeyPress);
             // 
             // apellidoCtextBox
             // 
@@ -148,6 +151,7 @@
             this.apellidoCtextBox.Name = "apellidoCtextBox";
             this.apellidoCtextBox.Size = new System.Drawing.Size(287, 20);
             this.apellidoCtextBox.TabIndex = 10;
+            this.apellidoCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apellidoCtextBox_KeyPress);
             // 
             // apodoCtextBox
             // 
@@ -155,13 +159,16 @@
             this.apodoCtextBox.Name = "apodoCtextBox";
             this.apodoCtextBox.Size = new System.Drawing.Size(287, 20);
             this.apodoCtextBox.TabIndex = 11;
+            this.apodoCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.apodoCtextBox_KeyPress);
             // 
             // cedulaCtextBox
             // 
             this.cedulaCtextBox.Location = new System.Drawing.Point(12, 350);
+            this.cedulaCtextBox.MaxLength = 13;
             this.cedulaCtextBox.Name = "cedulaCtextBox";
             this.cedulaCtextBox.Size = new System.Drawing.Size(287, 20);
             this.cedulaCtextBox.TabIndex = 12;
+            this.cedulaCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cedulaCtextBox_KeyPress);
             // 
             // direccionCtextBox
             // 
@@ -194,6 +201,7 @@
             this.telefonoCtextBox.Name = "telefonoCtextBox";
             this.telefonoCtextBox.Size = new System.Drawing.Size(309, 20);
             this.telefonoCtextBox.TabIndex = 17;
+            this.telefonoCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefonoCtextBox_KeyPress);
             // 
             // label10
             // 
@@ -211,6 +219,7 @@
             this.celularCtextBox.Name = "celularCtextBox";
             this.celularCtextBox.Size = new System.Drawing.Size(309, 20);
             this.celularCtextBox.TabIndex = 22;
+            this.celularCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularCtextBox_KeyPress);
             // 
             // comboBox1
             // 

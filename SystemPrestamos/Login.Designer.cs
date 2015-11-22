@@ -122,6 +122,7 @@
             this.IniciarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.IniciarButton.Location = new System.Drawing.Point(14, 447);
             this.IniciarButton.Name = "IniciarButton";
+            this.IniciarButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.IniciarButton.Size = new System.Drawing.Size(75, 71);
             this.IniciarButton.TabIndex = 4;
             this.IniciarButton.Text = "INICIAR";

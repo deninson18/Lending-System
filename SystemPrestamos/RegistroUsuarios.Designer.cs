@@ -120,6 +120,7 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(214, 20);
             this.NombretextBox.TabIndex = 2;
+            this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
             // 
             // NombreUsuariotextBox
             // 
@@ -184,6 +185,7 @@
             this.UsuarioIdtextBox.Name = "UsuarioIdtextBox";
             this.UsuarioIdtextBox.Size = new System.Drawing.Size(214, 20);
             this.UsuarioIdtextBox.TabIndex = 0;
+            this.UsuarioIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioIdtextBox_KeyPress);
             // 
             // Buscarbutton
             // 
@@ -210,8 +212,9 @@
             this.AreaUsuariotextBox.Name = "AreaUsuariotextBox";
             this.AreaUsuariotextBox.Size = new System.Drawing.Size(214, 20);
             this.AreaUsuariotextBox.TabIndex = 13;
+            this.AreaUsuariotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AreaUsuariotextBox_KeyPress);
             // 
-            // RegistroUsuario
+            // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +237,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NombreUsuariolabel);
             this.Controls.Add(this.Nombrelabel);
-            this.Name = "RegistroUsuario";
+            this.Name = "RegistroUsuarios";
             this.Text = "RegistroUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.InsertarImgpictureBox)).EndInit();
             this.ResumeLayout(false);

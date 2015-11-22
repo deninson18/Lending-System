@@ -9,10 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 
+
 namespace SystemPrestamos
 {
+   
     public partial class RegistroClientes : Form
+       
     {
+        
         public RegistroClientes()
         {
             InitializeComponent();
@@ -55,7 +59,7 @@ namespace SystemPrestamos
 
         private void RegistroCliente_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -262,6 +266,53 @@ namespace SystemPrestamos
         private void FemeninoradioButton_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void nombreCtextBox_TextChanged_1(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void nombreCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
+
+        private void apellidoCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
+
+        private void apodoCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
+
+        private void idCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void cedulaCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void telefonoCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void celularCtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
         }
     }
 }

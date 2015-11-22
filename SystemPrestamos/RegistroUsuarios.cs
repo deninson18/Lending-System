@@ -127,5 +127,23 @@ namespace SystemPrestamos
                 AreaUsuariotextBox.Text = user.AreaUsuario; 
             }
         }
+
+        private void UsuarioIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
+
+        private void AreaUsuariotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
     }
 }

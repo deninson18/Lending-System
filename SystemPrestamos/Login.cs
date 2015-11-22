@@ -48,6 +48,7 @@ namespace SystemPrestamos
              {
                 Principal menu = new Principal();
                  menu.Show();
+                this.Visible = false;
              }
              else
              {

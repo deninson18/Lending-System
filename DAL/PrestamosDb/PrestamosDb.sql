@@ -14,9 +14,9 @@ delete from Usuarios where UsuarioId=6 ;
 
 create table Rutas(RutaId int identity primary key,
 NombreRuta varchar(100),CobradorId int references Cobradores(CobradorId),RutaDetalle varchar(200));
-insert into Rutas(NombreRuta,CobradorId) Values ('Pimentel',1)
-select c.Nombres,c.Apellidos,c.Direccion,r.RutaId from Rutas r inner join Cobradores c on c.CobradorId = r.CobradorId where RutaId=3;
-insert into Cobradores(Nombres,Apellidos,Direccion,Telefono,Celular,Cedula) Values ('Anthony','Burgos','Los arcarizos','8092905555','80934324342','0564324324324')
+--insert into Rutas(NombreRuta,CobradorId) Values ('Pimentel',1)
+--select c.Nombres,c.Apellidos,c.Direccion,r.RutaId from Rutas r inner join Cobradores c on c.CobradorId = r.CobradorId where RutaId=3;
+--insert into Cobradores(Nombres,Apellidos,Direccion,Telefono,Celular,Cedula) Values ('Anthony','Burgos','Los arcarizos','8092905555','80934324342','0564324324324')
 
 create table Cobradores(CobradorId int identity primary key,
 Nombres varchar(30),Apellidos varchar(30),

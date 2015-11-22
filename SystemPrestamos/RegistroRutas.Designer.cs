@@ -99,6 +99,7 @@
             this.RutaIdtextBox.Name = "RutaIdtextBox";
             this.RutaIdtextBox.Size = new System.Drawing.Size(234, 20);
             this.RutaIdtextBox.TabIndex = 26;
+            this.RutaIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RutaIdtextBox_KeyPress);
             // 
             // NombreRutalabel
             // 

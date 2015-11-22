@@ -117,5 +117,41 @@ namespace SystemPrestamos
             }
 
         }
+
+        private void CobradorIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void TelefonotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void CelulartextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void CedulatextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
+
+        private void NombretextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
+
+        private void ApellidotextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Letras(e);
+        }
     }
 }

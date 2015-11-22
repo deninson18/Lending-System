@@ -116,5 +116,11 @@ namespace SystemPrestamos
             CobradorIdcomboBox.DisplayMember = "Nombres";
             CobradorIdcomboBox.ValueMember = "CobradorId";
         }
+
+        private void RutaIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validacion.Validacion v = new Validacion.Validacion();
+            v.Numeros(e);
+        }
     }
 }

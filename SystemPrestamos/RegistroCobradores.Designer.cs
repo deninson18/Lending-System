@@ -65,6 +65,7 @@
             this.CobradorIdtextBox.Name = "CobradorIdtextBox";
             this.CobradorIdtextBox.Size = new System.Drawing.Size(280, 20);
             this.CobradorIdtextBox.TabIndex = 1;
+            this.CobradorIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CobradorIdtextBox_KeyPress);
             // 
             // label2
             // 
@@ -81,6 +82,7 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(280, 20);
             this.NombretextBox.TabIndex = 3;
+            this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
             // 
             // label3
             // 
@@ -97,6 +99,7 @@
             this.ApellidotextBox.Name = "ApellidotextBox";
             this.ApellidotextBox.Size = new System.Drawing.Size(279, 20);
             this.ApellidotextBox.TabIndex = 5;
+            this.ApellidotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidotextBox_KeyPress);
             // 
             // label4
             // 
@@ -127,6 +130,7 @@
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.Size = new System.Drawing.Size(271, 20);
             this.TelefonotextBox.TabIndex = 9;
+            this.TelefonotextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonotextBox_KeyPress);
             // 
             // label6
             // 
@@ -152,6 +156,7 @@
             this.CelulartextBox.Name = "CelulartextBox";
             this.CelulartextBox.Size = new System.Drawing.Size(271, 20);
             this.CelulartextBox.TabIndex = 13;
+            this.CelulartextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelulartextBox_KeyPress);
             // 
             // Cedulalabel
             // 
@@ -168,6 +173,7 @@
             this.CedulatextBox.Name = "CedulatextBox";
             this.CedulatextBox.Size = new System.Drawing.Size(271, 20);
             this.CedulatextBox.TabIndex = 15;
+            this.CedulatextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CedulatextBox_KeyPress);
             // 
             // Nuevobutton
             // 
