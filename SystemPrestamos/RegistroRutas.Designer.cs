@@ -35,17 +35,19 @@
             this.RutaIdlabel = new System.Windows.Forms.Label();
             this.RutaIdtextBox = new System.Windows.Forms.TextBox();
             this.NombreRutalabel = new System.Windows.Forms.Label();
-            this.NombreRutatextBox = new System.Windows.Forms.TextBox();
+            this.RutaNombretextBox = new System.Windows.Forms.TextBox();
             this.RutaDetallelabel = new System.Windows.Forms.Label();
             this.RutaDetalletextBox = new System.Windows.Forms.TextBox();
             this.CobradorIdlabel = new System.Windows.Forms.Label();
             this.CobradorIdcomboBox = new System.Windows.Forms.ComboBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.CobradorlistBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Location = new System.Drawing.Point(87, 305);
+            this.Nuevobutton.Location = new System.Drawing.Point(85, 380);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(75, 23);
             this.Nuevobutton.TabIndex = 15;
@@ -55,7 +57,7 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Location = new System.Drawing.Point(193, 305);
+            this.Guardarbutton.Location = new System.Drawing.Point(191, 380);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(75, 23);
             this.Guardarbutton.TabIndex = 17;
@@ -65,7 +67,7 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Location = new System.Drawing.Point(293, 305);
+            this.Eliminarbutton.Location = new System.Drawing.Point(291, 380);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(75, 23);
             this.Eliminarbutton.TabIndex = 2;
@@ -109,12 +111,12 @@
             this.NombreRutalabel.TabIndex = 27;
             this.NombreRutalabel.Text = "Nombre de Ruta";
             // 
-            // NombreRutatextBox
+            // RutaNombretextBox
             // 
-            this.NombreRutatextBox.Location = new System.Drawing.Point(34, 138);
-            this.NombreRutatextBox.Name = "NombreRutatextBox";
-            this.NombreRutatextBox.Size = new System.Drawing.Size(234, 20);
-            this.NombreRutatextBox.TabIndex = 8;
+            this.RutaNombretextBox.Location = new System.Drawing.Point(34, 138);
+            this.RutaNombretextBox.Name = "RutaNombretextBox";
+            this.RutaNombretextBox.Size = new System.Drawing.Size(234, 20);
+            this.RutaNombretextBox.TabIndex = 8;
             // 
             // RutaDetallelabel
             // 
@@ -160,17 +162,37 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Location = new System.Drawing.Point(291, 248);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(75, 21);
+            this.Agregarbutton.TabIndex = 33;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
+            // 
+            // CobradorlistBox
+            // 
+            this.CobradorlistBox.FormattingEnabled = true;
+            this.CobradorlistBox.Location = new System.Drawing.Point(34, 276);
+            this.CobradorlistBox.Name = "CobradorlistBox";
+            this.CobradorlistBox.Size = new System.Drawing.Size(232, 69);
+            this.CobradorlistBox.TabIndex = 34;
+            // 
             // RegistroRutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 351);
+            this.ClientSize = new System.Drawing.Size(451, 415);
+            this.Controls.Add(this.CobradorlistBox);
+            this.Controls.Add(this.Agregarbutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.CobradorIdcomboBox);
             this.Controls.Add(this.CobradorIdlabel);
             this.Controls.Add(this.RutaDetalletextBox);
             this.Controls.Add(this.RutaDetallelabel);
-            this.Controls.Add(this.NombreRutatextBox);
+            this.Controls.Add(this.RutaNombretextBox);
             this.Controls.Add(this.NombreRutalabel);
             this.Controls.Add(this.RutaIdtextBox);
             this.Controls.Add(this.RutaIdlabel);
@@ -195,11 +217,13 @@
         private System.Windows.Forms.Label RutaIdlabel;
         private System.Windows.Forms.TextBox RutaIdtextBox;
         private System.Windows.Forms.Label NombreRutalabel;
-        private System.Windows.Forms.TextBox NombreRutatextBox;
+        private System.Windows.Forms.TextBox RutaNombretextBox;
         private System.Windows.Forms.Label RutaDetallelabel;
         private System.Windows.Forms.TextBox RutaDetalletextBox;
         private System.Windows.Forms.Label CobradorIdlabel;
         private System.Windows.Forms.ComboBox CobradorIdcomboBox;
         private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Button Agregarbutton;
+        private System.Windows.Forms.ListBox CobradorlistBox;
     }
 }

@@ -274,7 +274,6 @@
             // 
             // buscarbutton
             // 
-            this.buscarbutton.Image = global::SystemPrestamos.Properties.Resources._1442277587_search;
             this.buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buscarbutton.Location = new System.Drawing.Point(118, 71);
             this.buscarbutton.Name = "buscarbutton";
@@ -287,7 +286,6 @@
             // 
             // Eliminarbutton
             // 
-            this.Eliminarbutton.Image = global::SystemPrestamos.Properties.Resources._1447451709_close;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.Location = new System.Drawing.Point(348, 388);
             this.Eliminarbutton.Name = "Eliminarbutton";
@@ -300,7 +298,6 @@
             // 
             // Guardarbutton
             // 
-            this.Guardarbutton.Image = global::SystemPrestamos.Properties.Resources._1443952702_document_save_as;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(271, 388);
             this.Guardarbutton.Name = "Guardarbutton";
@@ -313,7 +310,6 @@
             // 
             // Nuevobutton
             // 
-            this.Nuevobutton.Image = global::SystemPrestamos.Properties.Resources._1442278645_Log_Out;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(188, 388);
             this.Nuevobutton.Name = "Nuevobutton";

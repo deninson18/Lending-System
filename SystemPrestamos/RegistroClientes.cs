@@ -21,11 +21,7 @@ namespace SystemPrestamos
         {
             InitializeComponent();
         }
-
         
-
-       
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (idCtextBox.TextLength > 0)
@@ -138,9 +134,11 @@ namespace SystemPrestamos
                 error.SetError(idCtextBox, "Debe especificar el id");
             }
             else
-            if (cliente.Buscar(int.Parse(idCtextBox.Text)))
+           if (cliente.Buscar(int.Parse(idCtextBox.Text)))
             {
-
+                int id;
+                int.TryParse(idCtextBox.Text, out id);
+                cliente.Buscar(id);
                 nombreCtextBox.Text = cliente.Nombres;
                 apellidoCtextBox.Text = cliente.Apellidos;
                 apodoCtextBox.Text = cliente.Apodos;
@@ -155,6 +153,7 @@ namespace SystemPrestamos
                     FemeninoradioButton.Checked = true;
                 }
                 cedulaCtextBox.Text = cliente.Cedula;
+                telefonoCtextBox.Text = cliente.Telefono;
                 celularCtextBox.Text = cliente.Celular;
             }
             else
