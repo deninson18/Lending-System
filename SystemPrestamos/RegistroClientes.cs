@@ -14,15 +14,19 @@ using BLL;
 
 namespace SystemPrestamos
 {
-   
+
     public partial class RegistroClientes : Form
-       
+
     {
-        
+
         public RegistroClientes()
         {
             InitializeComponent();
         }
+
+
+
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -86,7 +90,7 @@ namespace SystemPrestamos
                 {
                     cliente.Sexo = 0;
                 }
-                
+
                 cliente.Cedula = cedulaCtextBox.Text;
                 cliente.Telefono = telefonoCtextBox.Text;
                 cliente.Celular = celularCtextBox.Text;
@@ -143,9 +147,12 @@ namespace SystemPrestamos
             }
             else
             {
+              
                 int id;
                 int.TryParse(idCtextBox.Text, out id);
                 cliente.Buscar(id);
+
+                idCtextBox.Text = cliente.ClienteId.ToString();
                 nombreCtextBox.Text = cliente.Nombres;
                 apellidoCtextBox.Text = cliente.Apellidos;
                 apodoCtextBox.Text = cliente.Apodos;
@@ -158,17 +165,13 @@ namespace SystemPrestamos
                     MasculinoradioButton.Checked = true;
 
                 }
-                cedulaCtextBox.Text = cliente.Cedula;
-                telefonoCtextBox.Text = cliente.Telefono;
-                celularCtextBox.Text = cliente.Celular;
-            }
-            else
-            {
+                else
+                {
                     FemeninoradioButton.Checked = true;
-        }
-        }
-        }
-
+                }
+              }
+            }
+            
         private void FemeninoradioButton_CheckedChanged(object sender, EventArgs e)
         {
 

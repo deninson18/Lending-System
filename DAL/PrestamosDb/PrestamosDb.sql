@@ -46,6 +46,7 @@ select * from  RutasCobradores;
 
 drop table Usuarios;drop table Rutas;drop table Cobradores;drop table Clientes;
 drop table Prestamos;drop table Atrasos;drop table RutasCobradores;
+
 --insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Deninson', 'deninson18', 'Administrador','12345','12-03-2015');
 --insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Natanael', 'elnata93', 'Administrador','nrpabc','12-03-2015');
 --delete from Cobradores where CobradorId=2;

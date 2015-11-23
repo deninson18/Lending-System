@@ -63,7 +63,7 @@ namespace BLL
 
                         foreach (var cobrador in this.Cobradores)
                         {
-                            Comando.AppendLine(String.Format("insert into RutasCobradores(RutaId,CobradorId) values({0},{1})", this.RutaId, 1));
+                            Comando.AppendLine(String.Format("insert into RutasCobradores(RutaId,CobradorId) values({0},{1})", this.RutaId, cobrador.CobradorId));
                         }
                     }
                     retorno = conexion.Ejecutar(Comando.ToString());

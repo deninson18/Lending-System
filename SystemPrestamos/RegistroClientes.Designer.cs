@@ -292,6 +292,7 @@
             // 
             // buscarbutton
             // 
+            this.buscarbutton.Image = global::SystemPrestamos.Properties.Resources._1442277587_search;
             this.buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buscarbutton.Location = new System.Drawing.Point(234, 57);
             this.buscarbutton.Name = "buscarbutton";

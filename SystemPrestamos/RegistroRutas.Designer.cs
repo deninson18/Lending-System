@@ -32,7 +32,7 @@
             this.RutaIdlabel = new System.Windows.Forms.Label();
             this.RutaIdtextBox = new System.Windows.Forms.TextBox();
             this.NombreRutalabel = new System.Windows.Forms.Label();
-            this.RutaNombretextBox = new System.Windows.Forms.TextBox();
+            this.NombreRutatextBox = new System.Windows.Forms.TextBox();
             this.RutaDetallelabel = new System.Windows.Forms.Label();
             this.RutaDetalletextBox = new System.Windows.Forms.TextBox();
             this.CobradorIdlabel = new System.Windows.Forms.Label();
@@ -41,6 +41,8 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.CobradorlistBox = new System.Windows.Forms.ListBox();
+            this.Agregarbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Registrolabel
@@ -86,13 +88,13 @@
             this.NombreRutalabel.TabIndex = 27;
             this.NombreRutalabel.Text = "Nombre de Ruta";
             // 
-            // RutaNombretextBox
+            // NombreRutatextBox
             // 
             this.NombreRutatextBox.Location = new System.Drawing.Point(16, 159);
             this.NombreRutatextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.NombreRutatextBox.MaxLength = 100;
             this.NombreRutatextBox.Name = "NombreRutatextBox";
-            this.NombreRutatextBox.Size = new System.Drawing.Size(444, 23);
+            this.NombreRutatextBox.Size = new System.Drawing.Size(336, 23);
             this.NombreRutatextBox.TabIndex = 0;
             // 
             // RutaDetallelabel
@@ -105,7 +107,6 @@
             this.RutaDetallelabel.Size = new System.Drawing.Size(106, 15);
             this.RutaDetallelabel.TabIndex = 29;
             this.RutaDetallelabel.Text = "Detalle de Ruta";
-            this.RutaDetallelabel.Click += new System.EventHandler(this.RutaDetallelabel_Click);
             // 
             // RutaDetalletextBox
             // 
@@ -113,7 +114,7 @@
             this.RutaDetalletextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.RutaDetalletextBox.MaxLength = 200;
             this.RutaDetalletextBox.Name = "RutaDetalletextBox";
-            this.RutaDetalletextBox.Size = new System.Drawing.Size(444, 23);
+            this.RutaDetalletextBox.Size = new System.Drawing.Size(336, 23);
             this.RutaDetalletextBox.TabIndex = 1;
             // 
             // CobradorIdlabel
@@ -134,9 +135,8 @@
             this.CobradorIdcomboBox.Location = new System.Drawing.Point(16, 287);
             this.CobradorIdcomboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CobradorIdcomboBox.Name = "CobradorIdcomboBox";
-            this.CobradorIdcomboBox.Size = new System.Drawing.Size(444, 23);
+            this.CobradorIdcomboBox.Size = new System.Drawing.Size(336, 23);
             this.CobradorIdcomboBox.TabIndex = 2;
-            this.CobradorIdcomboBox.SelectedIndexChanged += new System.EventHandler(this.CobradorIdcomboBox_SelectedIndexChanged);
             // 
             // Buscarbutton
             // 
@@ -153,7 +153,7 @@
             // 
             this.Eliminarbutton.Image = global::SystemPrestamos.Properties.Resources.eliminar;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Eliminarbutton.Location = new System.Drawing.Point(303, 333);
+            this.Eliminarbutton.Location = new System.Drawing.Point(300, 447);
             this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(73, 62);
@@ -167,7 +167,7 @@
             // 
             this.Guardarbutton.Image = global::SystemPrestamos.Properties.Resources.save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Guardarbutton.Location = new System.Drawing.Point(211, 333);
+            this.Guardarbutton.Location = new System.Drawing.Point(208, 447);
             this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(71, 62);
@@ -181,7 +181,7 @@
             // 
             this.Nuevobutton.Image = global::SystemPrestamos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(128, 333);
+            this.Nuevobutton.Location = new System.Drawing.Point(125, 447);
             this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(62, 62);
@@ -191,17 +191,38 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
+            // CobradorlistBox
+            // 
+            this.CobradorlistBox.FormattingEnabled = true;
+            this.CobradorlistBox.ItemHeight = 15;
+            this.CobradorlistBox.Location = new System.Drawing.Point(16, 316);
+            this.CobradorlistBox.Name = "CobradorlistBox";
+            this.CobradorlistBox.Size = new System.Drawing.Size(334, 94);
+            this.CobradorlistBox.TabIndex = 32;
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Location = new System.Drawing.Point(361, 287);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Agregarbutton.TabIndex = 33;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click_1);
+            // 
             // RegistroRutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 417);
+            this.ClientSize = new System.Drawing.Size(494, 534);
+            this.Controls.Add(this.Agregarbutton);
+            this.Controls.Add(this.CobradorlistBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.CobradorIdcomboBox);
             this.Controls.Add(this.CobradorIdlabel);
             this.Controls.Add(this.RutaDetalletextBox);
             this.Controls.Add(this.RutaDetallelabel);
-            this.Controls.Add(this.RutaNombretextBox);
+            this.Controls.Add(this.NombreRutatextBox);
             this.Controls.Add(this.NombreRutalabel);
             this.Controls.Add(this.RutaIdtextBox);
             this.Controls.Add(this.RutaIdlabel);
@@ -229,13 +250,13 @@
         private System.Windows.Forms.Label RutaIdlabel;
         private System.Windows.Forms.TextBox RutaIdtextBox;
         private System.Windows.Forms.Label NombreRutalabel;
-        private System.Windows.Forms.TextBox RutaNombretextBox;
+        private System.Windows.Forms.TextBox NombreRutatextBox;
         private System.Windows.Forms.Label RutaDetallelabel;
         private System.Windows.Forms.TextBox RutaDetalletextBox;
         private System.Windows.Forms.Label CobradorIdlabel;
         private System.Windows.Forms.ComboBox CobradorIdcomboBox;
         private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.ListBox CobradorlistBox;
+        private System.Windows.Forms.Button Agregarbutton;
     }
 }

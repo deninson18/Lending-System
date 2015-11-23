@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LendingSystem", "SystemPrestamos\LendingSystem.csproj", "{18F9D409-2C18-4472-89A3-C585DAC9D5E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemPrestamos", "SystemPrestamos\SystemPrestamos.csproj", "{18F9D409-2C18-4472-89A3-C585DAC9D5E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{AA9209E9-FD83-4900-9CF9-5F52A706921F}"
 EndProject
