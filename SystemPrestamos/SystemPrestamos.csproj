@@ -95,6 +95,12 @@
     <Compile Include="RegistroCobradores.Designer.cs">
       <DependentUpon>RegistroCobradores.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroPrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroPrestamos.Designer.cs">
+      <DependentUpon>RegistroPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistroRutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroCobradores.resx">
       <DependentUpon>RegistroCobradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroPrestamos.resx">
+      <DependentUpon>RegistroPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroRutas.resx">
       <DependentUpon>RegistroRutas.cs</DependentUpon>
@@ -191,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money-bills-installation-system.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
