@@ -43,37 +43,44 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 333);
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 277);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 19);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 385);
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 333);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 19);
+            this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "CONTRASEÑA";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(11, 355);
+            this.usuarioTextBox.Location = new System.Drawing.Point(16, 299);
+            this.usuarioTextBox.MaxLength = 40;
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(252, 20);
             this.usuarioTextBox.TabIndex = 2;
+            this.usuarioTextBox.TextChanged += new System.EventHandler(this.usuarioTextBox_TextChanged);
+            this.usuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usuarioTextBox_KeyPress);
             // 
             // ContrasenaTextBox
             // 
-            this.ContrasenaTextBox.Location = new System.Drawing.Point(11, 407);
+            this.ContrasenaTextBox.Location = new System.Drawing.Point(15, 351);
+            this.ContrasenaTextBox.MaxLength = 50;
             this.ContrasenaTextBox.Name = "ContrasenaTextBox";
             this.ContrasenaTextBox.Size = new System.Drawing.Size(252, 20);
             this.ContrasenaTextBox.TabIndex = 3;
             this.ContrasenaTextBox.UseSystemPasswordChar = true;
+            this.ContrasenaTextBox.TextChanged += new System.EventHandler(this.ContrasenaTextBox_TextChanged);
+            this.ContrasenaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContrasenaTextBox_KeyPress);
             // 
             // label3
             // 
@@ -85,30 +92,31 @@
             // SysPrestamoslabel
             // 
             this.SysPrestamoslabel.AutoSize = true;
-            this.SysPrestamoslabel.Font = new System.Drawing.Font("Microsoft JhengHei", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SysPrestamoslabel.Location = new System.Drawing.Point(28, 9);
+            this.SysPrestamoslabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SysPrestamoslabel.Location = new System.Drawing.Point(45, 9);
             this.SysPrestamoslabel.Name = "SysPrestamoslabel";
-            this.SysPrestamoslabel.Size = new System.Drawing.Size(222, 34);
+            this.SysPrestamoslabel.Size = new System.Drawing.Size(202, 28);
             this.SysPrestamoslabel.TabIndex = 9;
             this.SysPrestamoslabel.Text = "Lending System ";
+            this.SysPrestamoslabel.Click += new System.EventHandler(this.SysPrestamoslabel_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SystemPrestamos.Properties.Resources.personal_information_98356;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 60);
+          
+            this.pictureBox1.Location = new System.Drawing.Point(11, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(248, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 209);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // CancelarButton
             // 
             this.CancelarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelarButton.Image = global::SystemPrestamos.Properties.Resources.cancel;
+          
             this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CancelarButton.Location = new System.Drawing.Point(188, 447);
+            this.CancelarButton.Location = new System.Drawing.Point(193, 377);
             this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(75, 71);
+            this.CancelarButton.Size = new System.Drawing.Size(75, 57);
             this.CancelarButton.TabIndex = 5;
             this.CancelarButton.Text = "CANCELAR";
             this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -118,12 +126,12 @@
             // IniciarButton
             // 
             this.IniciarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IniciarButton.Image = global::SystemPrestamos.Properties.Resources._1445992385_Open;
+            
             this.IniciarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.IniciarButton.Location = new System.Drawing.Point(14, 447);
+            this.IniciarButton.Location = new System.Drawing.Point(16, 377);
             this.IniciarButton.Name = "IniciarButton";
             this.IniciarButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.IniciarButton.Size = new System.Drawing.Size(75, 71);
+            this.IniciarButton.Size = new System.Drawing.Size(75, 57);
             this.IniciarButton.TabIndex = 4;
             this.IniciarButton.Text = "INICIAR";
             this.IniciarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(277, 530);
+            this.ClientSize = new System.Drawing.Size(284, 449);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SysPrestamoslabel);
             this.Controls.Add(this.label3);
@@ -146,6 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.Login_Load);

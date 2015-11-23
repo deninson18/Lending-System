@@ -15,6 +15,7 @@ namespace SystemPrestamos.Validacion
         try{
             if (char.IsLetter(e.KeyChar))
             {
+                    e.Handled = false;
 
             } else if (char.IsControl(e.KeyChar))
             {
@@ -33,6 +34,7 @@ namespace SystemPrestamos.Validacion
                 throw ex;
             }
        }
+
         public void Numeros(KeyPressEventArgs e)
         {
         try { 

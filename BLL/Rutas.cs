@@ -16,6 +16,8 @@ namespace BLL
         public string NombreRuta { set; get; }
         public int CobradorId { set; get;  }
         public string Detalle { set; get; }
+
+       
        
 
         public List<Cobradores> Cobradores { get; set; }
@@ -28,17 +30,23 @@ namespace BLL
             this.RutaId = 0;
 
             Cobradores = new List<Cobradores>();
-        }    
-
-        public Rutas(string NombreRuta,int CobradorId,string Detalle,int RutaId)
-        {
-            this.NombreRuta = NombreRuta;
-            this.CobradorId = CobradorId;
-            this.Detalle = Detalle;
-            this.RutaId = RutaId;
         }
 
-   
+        public Rutas(int rutaId, string nombreRuta)
+        {
+            this.RutaId = rutaId;
+            this.NombreRuta = nombreRuta;
+        }
+      
+
+        public Rutas(int RutaId, string NombreRuta, string Detalle, int CobradorId)
+        {
+            this.RutaId = RutaId;
+            this.NombreRuta = NombreRuta;
+            this.Detalle = Detalle;
+            this.CobradorId = CobradorId;
+
+        }
 
        public void AgregarCobrador(int CobradorId, string Nombres,string Apellidos)
        {
@@ -125,11 +133,18 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            string ordenFinal = ""; //!orden.Equals("") ? " orden by  " + orden : "";
-            if (!Orden.Equals(""))
-                ordenFinal = " orden by  " + Orden;
+            //string ordenFinal = ""; //!orden.Equals("") ? " orden by  " + orden : "";
+            //if (!Orden.Equals(""))
+            // ordenFinal = " orden by  " + Orden;
+            try
+            {
+                return conexion.ObtenerDatos(("Select " + Campos + " from Rutas where " + Condicion + Orden));
 
-            return conexion.ObtenerDatos(("Select " + Campos + " from Rutas where " + Condicion + ordenFinal));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

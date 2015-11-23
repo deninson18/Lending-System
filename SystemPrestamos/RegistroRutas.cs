@@ -104,13 +104,29 @@ namespace SystemPrestamos
 
         private void IdCobradorbutton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
+            if(RutaIdtextBox.TextLength > 0)
+            {
+                Rutas ruta = new Rutas();
+                int id;
+                int.TryParse(RutaIdtextBox.Text, out id);
+                ruta.RutaId = id;
+                if (ruta.Eliminar())
+                {
+                    MessageBox.Show("se ha eliminado la ruta");
+                }
+                else
+                {
+                    MessageBox.Show("no ha podido ser eliminada la ruta");
+                }
+            }
 
         }
+    
 
         private void RegistroRutas_Load(object sender, EventArgs e)
         {
@@ -124,6 +140,16 @@ namespace SystemPrestamos
         {
             Validacion.Validacion v = new Validacion.Validacion();
             v.Numeros(e);
+        }
+
+        private void CobradorIdcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RutaDetallelabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

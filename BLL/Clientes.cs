@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using DAL;
 
 
+
 namespace BLL
 {
     public class Clientes : ClaseMaestra
     {
+        
         public int ClienteId { get; set; }
         public string Nombres { get; set; }
         public string  Apellidos { get; set; }
@@ -21,8 +23,10 @@ namespace BLL
         public string Cedula { get; set; }
         public string Telefono { get; set; }
         public string Celular { get; set; }
+        public int RutaId { get; set; }
 
 
+        public List<Rutas> Rutas { get; set; }
         public Clientes()
         {
             this.ClienteId = 0;
@@ -35,37 +39,56 @@ namespace BLL
             this.Cedula = "";
             this.Telefono = "";
             this.Celular = "";
+            this.RutaId = 0;
+            
 
+            
+      }
+
+       
+
+        public Clientes( int ClienteId, string Nombres, string Apellidos, string Apodos, string Direccion, string Referencia, int Sexo, string Cedula, string Telefono, string Celular,int RutaId)
+        {
+            this.ClienteId = ClienteId;
+            this.Nombres = Nombres;
+            this.Apellidos = Apellidos;
+            this.Apodos = Apodos;
+            this.Direccion = Direccion;
+            this.Referencia = Referencia;
+            this.Sexo = Sexo;
+            this.Cedula = Cedula;
+            this.Telefono = Telefono;
+            this.Celular = Celular;
+            this.RutaId = RutaId;
+
+        }
+
+        public void AgregarRutas(int rutaId,string nombreRuta)
+        {
+            this.Rutas.Add(new Rutas(rutaId,nombreRuta));
         }
 
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();
             ConexionDb conexion = new ConexionDb();
-            try {
-               
-                dt = conexion.ObtenerDatos(string.Format("select ClienteId,Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular from Clientes where ClienteId={0}", IdBuscado));
-                if (dt.Rows.Count > 0)
-                {
-                    this.ClienteId = (int)dt.Rows[0]["ClienteId"];
-                    this.Nombres = dt.Rows[0]["Nombres"].ToString();
-                    this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
-                    this.Apodos = dt.Rows[0]["Apodos"].ToString();
-                    this.Direccion = dt.Rows[0]["Direccion"].ToString();
-                    this.Referencia = dt.Rows[0]["Referencia"].ToString();
-                    this.Sexo = (int)dt.Rows[0]["Sexo"];
-                    this.Cedula = dt.Rows[0]["Cedula"].ToString();
-                    this.Telefono = dt.Rows[0]["Telefono"].ToString();
-                    this.Celular = dt.Rows[0]["Celular"].ToString();
 
-                }
-            }catch(Exception ex)
+            dt = conexion.ObtenerDatos(String.Format(" Select ClienteId,Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular from Clientes where ClienteId={0} ", IdBuscado));
+            if (dt.Rows.Count > 0)
             {
-                throw ex;
+                this.ClienteId = (int)dt.Rows[0]["ClienteId"];
+                this.Nombres = dt.Rows[0]["Nombres"].ToString();
+                this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
+                this.Apodos = dt.Rows[0]["Apodos"].ToString();
+                this.Direccion = dt.Rows[0]["Direccion"].ToString();
+                this.Referencia = dt.Rows[0]["Referencia"].ToString();
+                this.Sexo = (int)dt.Rows[0]["Sexo"];
+                this.Cedula = dt.Rows[0]["Cedula"].ToString();
+                this.Telefono = dt.Rows[0]["Telefono"].ToString();
+                this.Celular = dt.Rows[0]["Celular"].ToString();
 
             }
             return dt.Rows.Count > 0;
-
         }
 
 
@@ -105,10 +128,10 @@ namespace BLL
             try { 
             bool retorno= false;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}')",
-                this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular));
+            retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular,RutaId) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}','{9}')",
+                this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,RutaId));
             return retorno;
-            }catch(Exception ex)
+           }catch(Exception ex)
             {
                 throw ex;
             }
@@ -119,7 +142,7 @@ namespace BLL
         {
             try { 
             ConexionDb conexion = new ConexionDb();
-            return conexion.ObtenerDatos(string.Format("select "+ Campos + "from Clientes" + "where "+ Condicion + Orden));
+            return conexion.ObtenerDatos(string.Format("select "+ Campos + "where from Clientes" + Condicion + Orden));
             }
             catch (Exception ex)
             {

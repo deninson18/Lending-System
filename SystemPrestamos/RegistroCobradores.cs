@@ -153,5 +153,10 @@ namespace SystemPrestamos
             Validacion.Validacion v = new Validacion.Validacion();
             v.Letras(e);
         }
+
+        private void TelefonotextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

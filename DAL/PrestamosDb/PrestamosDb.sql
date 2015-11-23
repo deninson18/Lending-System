@@ -25,8 +25,8 @@ Cedula varchar(13));
 
 create table Clientes(ClienteId int identity primary key,
 Nombres varchar(30),Apellidos varchar(30),Apodos varchar(30),
-Direccion varchar(100),Referencia varchar(50),Sexo bit,
-Cedula varchar(12),Telefono varchar(14),Celular varchar(14),RutaId int references Rutas(RutaId));
+Direccion varchar(100),Referencia varchar(50),Sexo int,
+Cedula varchar(13),Telefono varchar(14),Celular varchar(14),RutaId int references Rutas(RutaId));
 drop table Clientes
 select * from Clientes
 

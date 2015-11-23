@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace SystemPrestamos
 {
+ 
     static class Program
     {
         /// <summary>
@@ -17,6 +18,7 @@ namespace SystemPrestamos
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
+            
         }
     }
 }
