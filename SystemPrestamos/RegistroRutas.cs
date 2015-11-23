@@ -47,7 +47,7 @@ namespace SystemPrestamos
                 ruta.NombreRuta = RutaNombretextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
                 //ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.SelectedValue);
-               
+
                 ruta.CobradorId = (int)Convert.ToInt32(CobradorlistBox.ToString());
                 
                 if (ruta.Insertar())
@@ -67,7 +67,7 @@ namespace SystemPrestamos
                 ruta.RutaId = id;
                 ruta.NombreRuta = RutaNombretextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
-                
+
                 for (int i = 0; i < CobradorIdcomboBox.Items.Count; i++)
                 {
                     ruta.CobradorId += (int)Convert.ToInt32(CobradorlistBox.Items[i]);
@@ -113,20 +113,21 @@ namespace SystemPrestamos
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
             if (RutaIdtextBox.TextLength > 0)
-            {
+        {
                 Cobradores ruta = new Cobradores();
                 ruta.CobradorId = int.Parse(RutaIdtextBox.Text);
-
+            
                 if (ruta.Eliminar())
                 {
                     MessageBox.Show("Ruta se elimino Correctamente");
-                }
+        }
                 else
-                {
+        {
                     MessageBox.Show("Ruta no se elimino Correctamente");
                 }
             }
         }
+
 
         private void RegistroRutas_Load(object sender, EventArgs e)
         {

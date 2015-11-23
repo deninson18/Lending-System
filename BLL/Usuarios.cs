@@ -95,11 +95,9 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            string ordenFinal = ""; //!orden.Equals("") ? " orden by  " + orden : "";
-            if (!Orden.Equals(""))
-                ordenFinal = " orden by  " + Orden;
+         
 
-            return conexion.ObtenerDatos(("Select " + Campos + " from Usuarios where " + Condicion + ordenFinal));
+            return conexion.ObtenerDatos(("Select " + Campos + " from Usuarios where " + Condicion + Orden));
         }
 
         public bool Login(string nombre, string contrasena)

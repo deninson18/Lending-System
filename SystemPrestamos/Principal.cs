@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace SystemPrestamos
 {
     public partial class Principal : Form
@@ -20,8 +21,7 @@ namespace SystemPrestamos
 
         private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            RegistroUsuarios usuario = new RegistroUsuarios();
-            usuario.Show();
+            
         }
             
         private void rutasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +40,46 @@ namespace SystemPrestamos
         {
             RegistroRutas ruta = new RegistroRutas();
             ruta.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void cobradoresToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaCobradores cobrador = new Consultas.ConsultaCobradores();
+            cobrador.Show();
+        }
+
+        private void registrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cerrarSeccionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Login usuario = new Login();
+            usuario.Show();
+        }
+
+        private void registrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroUsuarios usuario = new RegistroUsuarios();
+            usuario.Show();
+        }
+
+        private void consultarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaUsuario usuario = new Consultas.ConsultaUsuario();
+            usuario.Show();
         }
     }
 }

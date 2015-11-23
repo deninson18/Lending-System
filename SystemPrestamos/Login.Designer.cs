@@ -46,7 +46,7 @@
             this.label1.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 365);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 19);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIO";
             // 
@@ -56,9 +56,10 @@
             this.label2.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 417);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 19);
+            this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "CONTRASEÑA";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // usuarioTextBox
             // 
@@ -66,6 +67,8 @@
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(263, 20);
             this.usuarioTextBox.TabIndex = 2;
+            this.usuarioTextBox.TextChanged += new System.EventHandler(this.usuarioTextBox_TextChanged);
+            this.usuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usuarioTextBox_KeyPress);
             // 
             // ContrasenaTextBox
             // 
@@ -74,6 +77,8 @@
             this.ContrasenaTextBox.Size = new System.Drawing.Size(263, 20);
             this.ContrasenaTextBox.TabIndex = 3;
             this.ContrasenaTextBox.UseSystemPasswordChar = true;
+            this.ContrasenaTextBox.TextChanged += new System.EventHandler(this.ContrasenaTextBox_TextChanged);
+            this.ContrasenaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContrasenaTextBox_KeyPress);
             // 
             // SysPrestamoslabel
             // 
@@ -102,7 +107,7 @@
             this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.CancelarButton.Location = new System.Drawing.Point(200, 479);
             this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(75, 71);
+            this.CancelarButton.Size = new System.Drawing.Size(75, 57);
             this.CancelarButton.TabIndex = 5;
             this.CancelarButton.Text = "CANCELAR";
             this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -116,7 +121,7 @@
             this.IniciarButton.Location = new System.Drawing.Point(12, 479);
             this.IniciarButton.Name = "IniciarButton";
             this.IniciarButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.IniciarButton.Size = new System.Drawing.Size(75, 71);
+            this.IniciarButton.Size = new System.Drawing.Size(75, 57);
             this.IniciarButton.TabIndex = 4;
             this.IniciarButton.Text = "INICIAR";
             this.IniciarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;

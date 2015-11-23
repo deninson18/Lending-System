@@ -49,7 +49,7 @@ drop table Prestamos;drop table Atrasos;drop table RutasCobradores;
 --insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Deninson', 'deninson18', 'Administrador','12345','12-03-2015');
 --insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Natanael', 'elnata93', 'Administrador','nrpabc','12-03-2015');
 --delete from Cobradores where CobradorId=2;
-
+                            
 --insert into Rutas(NombreRuta,CobradorId) Values ('Pimentel',1)
 --select c.Nombres,c.Apellidos,c.Direccion,r.RutaId from Rutas r inner join Cobradores c on c.CobradorId = r.CobradorId where RutaId=3;
 --insert into Cobradores(Nombres,Apellidos,Direccion,Telefono,Celular,Cedula) Values ('Anthony','Burgos','Los arcarizos','8092905555','80934324342','0564324324324')

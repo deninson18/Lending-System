@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BLL;
 
 
+
+
 namespace SystemPrestamos
 {
    
@@ -21,7 +23,7 @@ namespace SystemPrestamos
         {
             InitializeComponent();
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
             if (idCtextBox.TextLength > 0)
@@ -55,13 +57,16 @@ namespace SystemPrestamos
 
         private void RegistroCliente_Load(object sender, EventArgs e)
         {
-            
+            Rutas ruta = new Rutas();
+            RutacomboBox.DataSource = ruta.Listado("*", "1=1", "");
+            RutacomboBox.DisplayMember = "NombreRuta";
+            RutacomboBox.ValueMember = "RutaId";
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Clientes cliente = new Clientes();
-            if (nombreCtextBox.TextLength == 0 || apellidoCtextBox.TextLength == 0 || apodoCtextBox.TextLength == 0 || direccionCtextBox.TextLength == 0)
+            if (nombreCtextBox.TextLength == 0 || apellidoCtextBox.TextLength == 0 || direccionCtextBox.TextLength == 0 || direccionCtextBox.TextLength == 0 || cedulaCtextBox.TextLength==0)
             {
                 MessageBox.Show("No puede dejar ningun campo vacio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -85,6 +90,7 @@ namespace SystemPrestamos
                 cliente.Cedula = cedulaCtextBox.Text;
                 cliente.Telefono = telefonoCtextBox.Text;
                 cliente.Celular = celularCtextBox.Text;
+                cliente.RutaId = Convert.ToInt32(RutacomboBox.SelectedValue);
                 if (cliente.Insertar())
                 {
                     MessageBox.Show("Cliente ha sido Registrado");
@@ -129,12 +135,13 @@ namespace SystemPrestamos
             Clientes cliente = new Clientes();
             if (idCtextBox.TextLength == 0)
             {
+              
                 ErrorProvider error = new ErrorProvider();
                 error.Clear();
                 error.SetError(idCtextBox, "Debe especificar el id");
+                
             }
             else
-           if (cliente.Buscar(int.Parse(idCtextBox.Text)))
             {
                 int id;
                 int.TryParse(idCtextBox.Text, out id);
@@ -144,13 +151,12 @@ namespace SystemPrestamos
                 apodoCtextBox.Text = cliente.Apodos;
                 direccionCtextBox.Text = cliente.Direccion;
                 referenciaCtextBox.Text = cliente.Referencia;
-                if (cliente.Sexo==1)
+                cedulaCtextBox.Text = cliente.Cedula;
+                celularCtextBox.Text = cliente.Celular;
+                if (cliente.Sexo == 1)
                 {
                     MasculinoradioButton.Checked = true;
 
-                }else
-                {
-                    FemeninoradioButton.Checked = true;
                 }
                 cedulaCtextBox.Text = cliente.Cedula;
                 telefonoCtextBox.Text = cliente.Telefono;
@@ -158,108 +164,9 @@ namespace SystemPrestamos
             }
             else
             {
-                MessageBox.Show("ID no Existe");
-            }
+                    FemeninoradioButton.Checked = true;
         }
-
-        private void sexoCcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
-
-        private void celularCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void telefonoCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void referenciaCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void direccionCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cedulaCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void apodoCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void apellidoCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nombreCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idCtextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FemeninoradioButton_CheckedChanged(object sender, EventArgs e)
@@ -312,6 +219,11 @@ namespace SystemPrestamos
         {
             Validacion.Validacion v = new Validacion.Validacion();
             v.Numeros(e);
+        }
+
+        private void idCtextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
