@@ -131,7 +131,7 @@ namespace BLL
             try { 
             bool retorno= false;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular,RutaId) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}','{9}')",
+            retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular,RutaId) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}',{9})",
                 this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,RutaId));
             return retorno;
             }catch(Exception ex)
@@ -143,14 +143,8 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            try { 
             ConexionDb conexion = new ConexionDb();
-            return conexion.ObtenerDatos(string.Format("select "+ Campos + "where from Clientes" + Condicion + Orden));
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return conexion.ObtenerDatos("Select " + Campos + " from Clientes where " + Condicion + Orden);
         }
     }
 }

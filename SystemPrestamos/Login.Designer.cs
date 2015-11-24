@@ -45,17 +45,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 317);
+            this.label1.Location = new System.Drawing.Point(14, 304);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIO";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 373);
+            this.label2.Location = new System.Drawing.Point(14, 345);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(16, 339);
+            this.usuarioTextBox.Location = new System.Drawing.Point(15, 322);
             this.usuarioTextBox.MaxLength = 40;
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(252, 20);
@@ -74,7 +75,7 @@
             // 
             // ContrasenaTextBox
             // 
-            this.ContrasenaTextBox.Location = new System.Drawing.Point(15, 391);
+            this.ContrasenaTextBox.Location = new System.Drawing.Point(15, 363);
             this.ContrasenaTextBox.MaxLength = 50;
             this.ContrasenaTextBox.Name = "ContrasenaTextBox";
             this.ContrasenaTextBox.Size = new System.Drawing.Size(252, 20);
@@ -105,9 +106,9 @@
             // 
             this.CancelarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.CancelarButton.Location = new System.Drawing.Point(193, 417);
+            this.CancelarButton.Location = new System.Drawing.Point(192, 389);
             this.CancelarButton.Name = "CancelarButton";
-            this.CancelarButton.Size = new System.Drawing.Size(75, 57);
+            this.CancelarButton.Size = new System.Drawing.Size(75, 38);
             this.CancelarButton.TabIndex = 5;
             this.CancelarButton.Text = "CANCELAR";
             this.CancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -118,10 +119,10 @@
             // 
             this.IniciarButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IniciarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.IniciarButton.Location = new System.Drawing.Point(16, 417);
+            this.IniciarButton.Location = new System.Drawing.Point(15, 389);
             this.IniciarButton.Name = "IniciarButton";
             this.IniciarButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.IniciarButton.Size = new System.Drawing.Size(75, 57);
+            this.IniciarButton.Size = new System.Drawing.Size(75, 38);
             this.IniciarButton.TabIndex = 4;
             this.IniciarButton.Text = "INICIAR";
             this.IniciarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -131,9 +132,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SystemPrestamos.Properties.Resources.personal_information_98356;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 261);
+            this.pictureBox1.Size = new System.Drawing.Size(252, 248);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -142,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(284, 493);
+            this.ClientSize = new System.Drawing.Size(275, 452);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.SysPrestamoslabel);
             this.Controls.Add(this.label3);

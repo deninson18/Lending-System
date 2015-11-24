@@ -101,7 +101,7 @@ namespace BLL
             DataTable dtRuta = new DataTable();
             try
             {
-            dtRuta = conexion.ObtenerDatos(String.Format("select * from  Rutas wher RutaId={0}", IdBuscado));
+            dtRuta = conexion.ObtenerDatos(String.Format("select * from  Rutas where RutaId={0}", IdBuscado));
             if (dtRuta.Rows.Count > 0)
             {
                 this.NombreRuta = dtRuta.Rows[0]["NombreRuta"].ToString();
@@ -119,9 +119,7 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            //string ordenFinal = ""; //!orden.Equals("") ? " orden by  " + orden : "";
-            //if (!Orden.Equals(""))
-            // ordenFinal = " orden by  " + Orden;
+          
             try
             {
                 return conexion.ObtenerDatos(("Select " + Campos + " from Rutas where " + Condicion + Orden));

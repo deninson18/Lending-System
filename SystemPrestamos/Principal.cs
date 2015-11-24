@@ -81,5 +81,22 @@ namespace SystemPrestamos
             Consultas.ConsultaUsuario usuario = new Consultas.ConsultaUsuario();
             usuario.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaClientes cliente = new Consultas.ConsultaClientes();
+            cliente.Show();
+        }
+
+        private void rutasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaRutas ruta = new Consultas.ConsultaRutas();
+            ruta.Show();
+        }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

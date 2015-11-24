@@ -36,7 +36,7 @@ namespace SystemPrestamos
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         private void IniciarButton_Click(object sender, EventArgs e)
@@ -85,6 +85,11 @@ namespace SystemPrestamos
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

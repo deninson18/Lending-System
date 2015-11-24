@@ -13,41 +13,24 @@ namespace SystemPrestamos.Consultas
 {
     public partial class ConsultaCobradores : Form
     {
-        ErrorProvider error = new ErrorProvider();
+
         public ConsultaCobradores()
         {
             InitializeComponent();
-            error = new ErrorProvider();
-            buscaCobradorcomboBox.SelectedIndex = 0;
-        }
-        public int Error()
-        {
-            int cont = 0;
-            if (buscaCobradortextBox.TextLength == 0)
-            {
-                error.SetError(buscaCobradortextBox, "Completar el Campo");
-                cont = 1;
-            }
-            else
-            {
-                error.SetError(buscaCobradortextBox, " ");
-            }
-            return cont;
-        }
 
+        }
 
         private void buscaCobradorbutton_Click(object sender, EventArgs e)
         {
             Cobradores cobrador = new Cobradores();
             DataTable data = new DataTable();
             string condicion;
-            if(Error() == 0)
-            {
+           
                 if (buscaCobradorcomboBox.SelectedIndex == 0)
                 {
                     if (buscaCobradortextBox.Text.Trim().Length == 0)
                     {
-                        condicion = "1=1";
+                        condicion = "1=1 ";
                     }
                     else
                     {
@@ -78,7 +61,7 @@ namespace SystemPrestamos.Consultas
                 {
                     if (buscaCobradortextBox.Text.Trim().Length == 2)
                     {
-                        condicion = "3=3";
+                        condicion = "3=3 ";
                     }
                     else
                     {
@@ -86,7 +69,7 @@ namespace SystemPrestamos.Consultas
                         condicion = string.Format("Apellidos ='{0}' ", buscaCobradortextBox.Text);
 
                     }
-                    data = cobrador.Listado("CobradorId,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula", condicion, "");
+                    data = cobrador.Listado("CobradorId,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula ", condicion, "");
                     CobradordataGridView.DataSource = data;
                 }
                 if (buscaCobradorcomboBox.SelectedIndex == 3)
@@ -104,20 +87,12 @@ namespace SystemPrestamos.Consultas
                     data = cobrador.Listado("CobradorId,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula", condicion, "");
                     CobradordataGridView.DataSource = data;
                 }
-               
+              
+        }
 
-            }
-            if (buscaCobradorcomboBox.SelectedIndex == 4)
-            {
-                if (buscaCobradortextBox.Text.Trim().Length == 4)
-                {
-                    condicion = "5=5";
-                }
+        private void ConsultaCobradores_Load(object sender, EventArgs e)
+        {
 
-
-                data = cobrador.Listado("CobradorId,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula", "1=1", "");
-                CobradordataGridView.DataSource = data;
-            }
         }
     }
 }

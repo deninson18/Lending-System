@@ -13,36 +13,21 @@ namespace SystemPrestamos.Consultas
 {
     public partial class ConsultaUsuario : Form
     {
-        ErrorProvider error = new ErrorProvider();
+     
         public ConsultaUsuario()
         {
             InitializeComponent();
 
-            error = new ErrorProvider();
-            buscaUscomboBox.SelectedIndex = 0;
+            
         }
-        public int Error()
-        {
-            int cont = 0;
-            if (buscaUstextBox.TextLength == 0)
-            {
-                error.SetError(buscaUstextBox, "Completar el Campo");
-                cont = 1;
-            }
-            else
-            {
-                error.SetError(buscaUstextBox, "");
-            }
-            return cont;
-        }
+      
 
         private void buscaUsuariobutton_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
             DataTable data = new DataTable();
             string condicion;
-            if (Error() == 0)
-            {
+           
                 if (buscaUscomboBox.SelectedIndex == 0)
                 {
                     if (buscaUstextBox.Text.Trim().Length == 0)
@@ -75,20 +60,11 @@ namespace SystemPrestamos.Consultas
 
                 }
 
-
-            }
-           
-            if (buscaUscomboBox.SelectedIndex == 2)
-            {
-                if (buscaUstextBox.Text.Trim().Length == 2)
-                {
-                    condicion = "3=3";
-                }
-
-                data = usuario.Listado("UsuarioId, Nombres,NombresUsuarios,AreaUsuarios,Fecha", "3=3", "");
-                UsdataGridView.DataSource = data;
-            }
         }
-        
+
+        private void ConsultaUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

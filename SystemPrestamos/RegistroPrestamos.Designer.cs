@@ -257,7 +257,7 @@
             // 
             // Nuevobutton
             // 
-           
+            this.Nuevobutton.Image = global::SystemPrestamos.Properties.Resources.nuevo;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(160, 332);
             this.Nuevobutton.Name = "Nuevobutton";

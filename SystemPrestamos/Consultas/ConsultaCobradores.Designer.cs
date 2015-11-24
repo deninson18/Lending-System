@@ -38,13 +38,13 @@
             // 
             // buscaCobradorcomboBox
             // 
+            this.buscaCobradorcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.buscaCobradorcomboBox.FormattingEnabled = true;
             this.buscaCobradorcomboBox.Items.AddRange(new object[] {
             "Cobrador Id",
             "Nombres",
             "Apellidos",
-            "Direccion",
-            "Todo"});
+            "Direccion"});
             this.buscaCobradorcomboBox.Location = new System.Drawing.Point(92, 12);
             this.buscaCobradorcomboBox.Name = "buscaCobradorcomboBox";
             this.buscaCobradorcomboBox.Size = new System.Drawing.Size(250, 21);
@@ -63,6 +63,7 @@
             // buscaCobradortextBox
             // 
             this.buscaCobradortextBox.Location = new System.Drawing.Point(92, 39);
+            this.buscaCobradortextBox.MaxLength = 50;
             this.buscaCobradortextBox.Name = "buscaCobradortextBox";
             this.buscaCobradortextBox.Size = new System.Drawing.Size(250, 20);
             this.buscaCobradortextBox.TabIndex = 2;
@@ -98,8 +99,10 @@
             this.Controls.Add(this.buscaCobradortextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buscaCobradorcomboBox);
+            this.MaximizeBox = false;
             this.Name = "ConsultaCobradores";
             this.Text = "ConsultaCobradores";
+            this.Load += new System.EventHandler(this.ConsultaCobradores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CobradordataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

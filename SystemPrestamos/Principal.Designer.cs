@@ -152,6 +152,7 @@
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // prestamosToolStripMenuItem
             // 
@@ -171,6 +172,7 @@
             this.rutasToolStripMenuItem2.Name = "rutasToolStripMenuItem2";
             this.rutasToolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
             this.rutasToolStripMenuItem2.Text = "Rutas";
+            this.rutasToolStripMenuItem2.Click += new System.EventHandler(this.rutasToolStripMenuItem2_Click);
             // 
             // atrasosToolStripMenuItem1
             // 
@@ -288,6 +290,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

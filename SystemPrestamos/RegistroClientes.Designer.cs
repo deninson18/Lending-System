@@ -273,7 +273,7 @@
             this.cedulaCtextBox.Mask = "999-9999999-9";
             this.cedulaCtextBox.Name = "cedulaCtextBox";
             this.cedulaCtextBox.Size = new System.Drawing.Size(287, 20);
-            this.cedulaCtextBox.TabIndex = 30;
+            this.cedulaCtextBox.TabIndex = 3;
             // 
             // telefonoCtextBox
             // 
@@ -281,14 +281,14 @@
             this.telefonoCtextBox.Mask = "(000)-000-0000";
             this.telefonoCtextBox.Name = "telefonoCtextBox";
             this.telefonoCtextBox.Size = new System.Drawing.Size(307, 20);
-            this.telefonoCtextBox.TabIndex = 31;
+            this.telefonoCtextBox.TabIndex = 6;
             // 
             // celularCtextBox
             // 
             this.celularCtextBox.Location = new System.Drawing.Point(316, 294);
             this.celularCtextBox.Name = "celularCtextBox";
             this.celularCtextBox.Size = new System.Drawing.Size(307, 20);
-            this.celularCtextBox.TabIndex = 32;
+            this.celularCtextBox.TabIndex = 7;
             // 
             // buscarbutton
             // 

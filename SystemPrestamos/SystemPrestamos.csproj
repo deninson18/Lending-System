@@ -58,6 +58,12 @@
     <Compile Include="Consultas\ConsultaCobradores.Designer.cs">
       <DependentUpon>ConsultaCobradores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ConsultaRutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaRutas.Designer.cs">
+      <DependentUpon>ConsultaRutas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaCobradores.resx">
       <DependentUpon>ConsultaCobradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaRutas.resx">
+      <DependentUpon>ConsultaRutas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ConsultaUsuario.resx">
       <DependentUpon>ConsultaUsuario.cs</DependentUpon>

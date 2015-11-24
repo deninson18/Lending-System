@@ -38,11 +38,11 @@
             // 
             // buscaUscomboBox
             // 
+            this.buscaUscomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.buscaUscomboBox.FormattingEnabled = true;
             this.buscaUscomboBox.Items.AddRange(new object[] {
             "Usuario Id",
-            "Nombre",
-            "Todo"});
+            "Nombre"});
             this.buscaUscomboBox.Location = new System.Drawing.Point(95, 25);
             this.buscaUscomboBox.Name = "buscaUscomboBox";
             this.buscaUscomboBox.Size = new System.Drawing.Size(214, 21);
@@ -51,6 +51,7 @@
             // buscaUstextBox
             // 
             this.buscaUstextBox.Location = new System.Drawing.Point(95, 52);
+            this.buscaUstextBox.MaxLength = 50;
             this.buscaUstextBox.Name = "buscaUstextBox";
             this.buscaUstextBox.Size = new System.Drawing.Size(214, 20);
             this.buscaUstextBox.TabIndex = 1;
@@ -97,6 +98,7 @@
             this.Controls.Add(this.buscaUsuariobutton);
             this.Controls.Add(this.buscaUstextBox);
             this.Controls.Add(this.buscaUscomboBox);
+            this.MinimizeBox = false;
             this.Name = "ConsultaUsuario";
             this.Text = "ConsultaUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.UsdataGridView)).EndInit();

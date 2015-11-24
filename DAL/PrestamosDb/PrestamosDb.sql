@@ -30,7 +30,7 @@ create table Clientes(ClienteId int identity primary key,
 Nombres varchar(30),Apellidos varchar(30),Apodos varchar(30),
 Direccion varchar(100),Referencia varchar(50),Sexo bit,
 Cedula varchar(13),Telefono varchar(14),Celular varchar(14),
-RutaId int);
+RutaId int references Rutas(RutaId));
 go
 create table Prestamos(PrestamoId int identity primary key,ClienteId int,
 Direccion  varchar(100),FechaInicial varchar(20),FechaVencimiento varchar(20),
