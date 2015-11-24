@@ -173,9 +173,9 @@ namespace SystemPrestamos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nuevo1 {
+        internal static System.Drawing.Bitmap personal_information_98356 {
             get {
-                object obj = ResourceManager.GetObject("nuevo1", resourceCulture);
+                object obj = ResourceManager.GetObject("personal_information_98356", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

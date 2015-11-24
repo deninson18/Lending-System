@@ -41,9 +41,14 @@ namespace SystemPrestamos
             else
               if (RutaIdtextBox.TextLength == 0)
             {
+                int id;
+                int.TryParse(RutaIdtextBox.Text, out id);
+                ruta.RutaId = id;
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
-                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.SelectedValue);
+                //ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.SelectedValue);
+
+                ruta.CobradorId = Convert.ToInt32(CobradorlistBox.Text);
 
                 if (ruta.Insertar())
                 {
@@ -56,15 +61,17 @@ namespace SystemPrestamos
 
             }
             else if (RutaIdtextBox.TextLength > 0)
-
             {
                 int id;
                 int.TryParse(RutaIdtextBox.Text, out id);
                 ruta.RutaId = id;
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
-                ruta.CobradorId = (int)CobradorIdcomboBox.SelectedValue;
 
+                for (int i = 0; i < CobradorIdcomboBox.Items.Count; i++)
+                {
+                 //   ruta.CobradorId += (int)Convert.ToInt32(CobradorlistBox.Items[i]);
+                }
                 if (ruta.Editar())
                 {
                     MessageBox.Show("Ruta ha sido Editada");
@@ -84,7 +91,7 @@ namespace SystemPrestamos
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            /*Rutas ruta = new Rutas();
+            Rutas ruta = new Rutas();
             if (RutaIdtextBox.TextLength == 0)
             {
                 ErrorProvider error = new ErrorProvider();
@@ -97,41 +104,34 @@ namespace SystemPrestamos
                 int.TryParse(RutaIdtextBox.Text, out id);
                 ruta.Buscar(id);
                 RutaIdtextBox.Text = ruta.Cobradores.ToString();
-                
-
-            }*/
-        }
-
-        private void IdCobradorbutton_Click(object sender, EventArgs e)
-        {
-
+                NombreRutatextBox.Text = ruta.NombreRuta.ToString();
+                RutaDetalletextBox.Text = ruta.Detalle.ToString();
+                CobradorlistBox.Text = ruta.CobradorId.ToString();
+            }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            if(RutaIdtextBox.TextLength > 0)
+            if (RutaIdtextBox.TextLength > 0)
             {
-                Rutas ruta = new Rutas();
-                int id;
-                int.TryParse(RutaIdtextBox.Text, out id);
-                ruta.RutaId = id;
+                Cobradores ruta = new Cobradores();
+                ruta.CobradorId = int.Parse(RutaIdtextBox.Text);
+
                 if (ruta.Eliminar())
                 {
-                    MessageBox.Show("se ha eliminado la ruta");
+                    MessageBox.Show("Ruta se elimino Correctamente");
                 }
                 else
                 {
-                    MessageBox.Show("no ha podido ser eliminada la ruta");
+                    MessageBox.Show("Ruta no se elimino Correctamente");
                 }
             }
-
         }
-    
 
         private void RegistroRutas_Load(object sender, EventArgs e)
         {
             Cobradores cobrador = new Cobradores();
-            CobradorIdcomboBox.DataSource = cobrador.Listado("*","1=1","");
+            CobradorIdcomboBox.DataSource = cobrador.Listado("*", "1=1", "");
             CobradorIdcomboBox.DisplayMember = "Nombres";
             CobradorIdcomboBox.ValueMember = "CobradorId";
         }
@@ -142,14 +142,9 @@ namespace SystemPrestamos
             v.Numeros(e);
         }
 
-        private void CobradorIdcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void Agregarbutton_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void RutaDetallelabel_Click(object sender, EventArgs e)
-        {
-
+            CobradorlistBox.Items.Add(CobradorIdcomboBox.Text);
         }
     }
 }

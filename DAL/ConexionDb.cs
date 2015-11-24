@@ -19,7 +19,7 @@ namespace DAL
             cmd = new SqlCommand();
         }
 
-        public bool Ejecutar(string ComandoSql)
+        public bool Ejecutar(String ComandoSql)
         {
             bool retorno = false;
 
@@ -30,8 +30,8 @@ namespace DAL
                 cmd.CommandText = ComandoSql;
                 cmd.ExecuteNonQuery();
                 retorno = true;
-
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -40,9 +40,9 @@ namespace DAL
                 conexion.Close();
             }
             return retorno;
-
         }
-        public DataTable ObtenerDatos(string ComandoSql)
+
+        public DataTable ObtenerDatos(String ComandoSql)
         {
             SqlDataAdapter adapter;
             DataTable dt = new DataTable();
@@ -52,10 +52,8 @@ namespace DAL
                 conexion.Open();
                 cmd.Connection = conexion;
                 cmd.CommandText = ComandoSql;
-
                 adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
-
             }
             catch(Exception ex)
             {
@@ -66,6 +64,29 @@ namespace DAL
                 conexion.Close();
             }
             return dt;
+        }
+
+        public object ObtenerValor(String ComandoSql)
+        {
+            object retorno = null;
+
+            try
+            {
+                conexion.Open();
+                cmd.Connection = conexion;
+                cmd.CommandText = ComandoSql;
+                retorno = cmd.ExecuteScalar();
+                retorno = true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+            return retorno;
         }
 
     }

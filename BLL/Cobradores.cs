@@ -35,7 +35,7 @@ namespace BLL
 
         public Cobradores(int cobradorId, string Nombres,string Apellidos)
         {
-            this.CobradorId = CobradorId;
+            this.CobradorId = cobradorId;
             this.Nombres = Nombres;
             this.Apellidos = Apellidos;
             
@@ -86,32 +86,38 @@ namespace BLL
 
         public override bool Eliminar()
         {
-            try {
-            bool retorno = false;
-                ConexionDb conexion = new ConexionDb();
-                retorno = conexion.Ejecutar(String.Format("Delete from Cobradores where CobradorId={0}", this.CobradorId));
-            return retorno;
-            }catch(Exception ex)
-            {
-                throw ex;
-            }
+            try{
+                    bool retorno = false;
+                    ConexionDb conexion = new ConexionDb();
+                    retorno = conexion.Ejecutar(String.Format("Delete from Cobradores where CobradorId={0}", this.CobradorId));
+                    return retorno;
+                }catch(Exception ex)
+                {
+                    throw ex;
+                }
         }
+
         public override bool Buscar(int IdBuscado)
         {
-            DataTable dt = new DataTable();
-            DataTable dtRuta = new DataTable();
-            dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular,Cedula from Cobradores where CobradorId= {0} ", IdBuscado));
-            if(dt.Rows.Count > 0)
-            {
-                this.CobradorId = (int)dt.Rows[0]["CobradorId"];
-                this.Nombres = dt.Rows[0]["Nombres"].ToString();
-                this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
-                this.Direccion = dt.Rows[0]["Direccion"].ToString();
-                this.Telefono = dt.Rows[0]["Telefono"].ToString();
-                this.Celular = dt.Rows[0]["Celular"].ToString();
-                this.Cedula = dt.Rows[0]["Cedula"].ToString();
-            } 
-            return dt.Rows.Count > 0;
+            try{
+                    DataTable dt = new DataTable();
+                    DataTable dtRuta = new DataTable();
+                    dt = conexion.ObtenerDatos(String.Format("Select CobradorId,Nombres,Apellidos, Direccion,Telefono,Celular,Cedula from Cobradores where CobradorId= {0} ", IdBuscado));
+                    if(dt.Rows.Count > 0)
+                    {
+                        this.CobradorId = (int)dt.Rows[0]["CobradorId"];
+                        this.Nombres = dt.Rows[0]["Nombres"].ToString();
+                        this.Apellidos = dt.Rows[0]["Apellidos"].ToString();
+                        this.Direccion = dt.Rows[0]["Direccion"].ToString();
+                        this.Telefono = dt.Rows[0]["Telefono"].ToString();
+                        this.Celular = dt.Rows[0]["Celular"].ToString();
+                        this.Cedula = dt.Rows[0]["Cedula"].ToString();
+                    } 
+                    return dt.Rows.Count > 0;
+                }catch(Exception ex)
+                {
+                    throw ex;
+                }
         } 
          
         public override DataTable Listado(string Campos, string Condicion, string Orden)

@@ -78,11 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="RegistroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,12 +89,6 @@
     </Compile>
     <Compile Include="RegistroCobradores.Designer.cs">
       <DependentUpon>RegistroCobradores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistroPrestamos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistroPrestamos.Designer.cs">
-      <DependentUpon>RegistroPrestamos.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistroRutas.cs">
       <SubType>Form</SubType>
@@ -132,16 +121,12 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroClientes.resx">
       <DependentUpon>RegistroClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroCobradores.resx">
       <DependentUpon>RegistroCobradores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistroPrestamos.resx">
-      <DependentUpon>RegistroPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistroRutas.resx">
       <DependentUpon>RegistroRutas.cs</DependentUpon>
@@ -202,7 +187,7 @@
     <None Include="Resources\money-bills-installation-system.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\personal_information_98356.jpg" />
+    <Content Include="Resources\1448309126_banker.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
