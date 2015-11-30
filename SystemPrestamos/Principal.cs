@@ -27,6 +27,7 @@ namespace SystemPrestamos
         private void rutasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistroClientes registro = new RegistroClientes();
+          
             registro.Show();
         }
 
@@ -97,6 +98,18 @@ namespace SystemPrestamos
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void cobradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroPrestamos prestamos = new RegistroPrestamos();
+            prestamos.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.PrestamosReportes pr = new Reportes.PrestamosReportes();
+            pr.Show();
         }
     }
 }

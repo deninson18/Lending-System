@@ -28,14 +28,13 @@ CobradorId int references Cobradores(CobradorId));
 go
 create table Clientes(ClienteId int identity primary key,
 Nombres varchar(30),Apellidos varchar(30),Apodos varchar(30),
-Direccion varchar(100),Referencia varchar(50),Sexo bit,
+Direccion varchar(100),Referencia varchar(50),Sexo int,
 Cedula varchar(13),Telefono varchar(14),Celular varchar(14),
 RutaId int references Rutas(RutaId));
 go
-create table Prestamos(PrestamoId int identity primary key,ClienteId int,
-Direccion  varchar(100),FechaInicial varchar(20),FechaVencimiento varchar(20),
-RutaId int,NombreRuta varchar(100),Capital float,Cuotas float,Interes float,
-TipodePrestamo varchar(15));
+create table Prestamos(PrestamoId int identity primary key,ClienteId int references Clientes(ClienteId),
+RutaId int references Rutas(RutaId),FechaInicial varchar(30),FechaVencimiento varchar(30),Monto float, SemanaNo int,
+ ValorCuota int,Interes float,Cuota float);
 go                            
 create table Atrasos(AtrasoId int identity primary key,CantidadAtraso int);
 

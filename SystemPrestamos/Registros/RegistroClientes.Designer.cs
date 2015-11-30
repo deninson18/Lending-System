@@ -286,6 +286,7 @@
             // celularCtextBox
             // 
             this.celularCtextBox.Location = new System.Drawing.Point(316, 294);
+            this.celularCtextBox.Mask = "(000)-000-0000";
             this.celularCtextBox.Name = "celularCtextBox";
             this.celularCtextBox.Size = new System.Drawing.Size(307, 20);
             this.celularCtextBox.TabIndex = 7;
@@ -374,6 +375,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "RegistroClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCliente";
             this.Load += new System.EventHandler(this.RegistroCliente_Load);
             this.groupBox1.ResumeLayout(false);

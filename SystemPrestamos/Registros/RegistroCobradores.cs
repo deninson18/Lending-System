@@ -30,22 +30,24 @@ namespace SystemPrestamos
             CelulartextBox.Clear();
             CedulatextBox.Clear();
         }
-
+        
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            if (NombretextBox.TextLength == 0 || ApellidotextBox.TextLength == 0 || DirecciontextBox.TextLength == 0 || TelefonotextBox.TextLength == 0 || CelulartextBox.TextLength == 0 || CedulatextBox.TextLength == 0)
+            Cobradores cobra = new Cobradores();
+
+            if (NombretextBox.Text.Length == 0 && ApellidotextBox.Text.Length == 0 && DirecciontextBox.Text.Length == 0 && TelefonotextBox.Text.Length == 0 && CelulartextBox.Text.Length == 0 && CedulatextBox.Text.Length == 0)
             {
                 MessageBox.Show("El campo debe estar lleno ");
-            }else
-            if(CobradorIdtextBox.TextLength == 0)
-            {
+            }
+            else
                 cobra.Nombres = NombretextBox.Text;
                 cobra.Apellidos = ApellidotextBox.Text;
                 cobra.Direccion = DirecciontextBox.Text;
                 cobra.Telefono = TelefonotextBox.Text;
                 cobra.Celular = CelulartextBox.Text;
                 cobra.Cedula = CedulatextBox.Text;
-
+            if (CobradorIdtextBox.TextLength == 0)
+            {
                 if (cobra.Insertar())
                 {
                     MessageBox.Show("Cobrador se agrego Correctamente");
@@ -54,24 +56,19 @@ namespace SystemPrestamos
                 {
                     MessageBox.Show("Cobrador no se agrego Correctamente");
                 }
-            }else
-                if (CobradorIdtextBox.TextLength > 0)
+            }
+            else
+                if (CobradorIdtextBox.TextLength != 0)
+            {
+                cobra.CobradorId = Convert.ToInt32(CobradorIdtextBox.Text);
+                if (cobra.Editar())
                 {
-                    cobra.Nombres = NombretextBox.Text;
-                    cobra.Apellidos = ApellidotextBox.Text;
-                    cobra.Direccion = DirecciontextBox.Text;
-                    cobra.Telefono = TelefonotextBox.Text;
-                    cobra.Celular = CelulartextBox.Text;
-                    cobra.Cedula = CedulatextBox.Text;
-
-                    if (cobra.Editar())
-                    {
-                        MessageBox.Show("Cobrador se agrego Correctamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cobrador no se agrego Correctamente");
-                    }
+                    MessageBox.Show("Cobrador se edito Correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Cobrador no se edito Correctamente");
+                }
             }
         }
 
@@ -85,18 +82,20 @@ namespace SystemPrestamos
                 error.SetError(CobradorIdtextBox, "Debe especificar el id");
             }
             else
-            {
-                int id;
-                int.TryParse(CobradorIdtextBox.Text, out id);
-                cobrador.Buscar(id);
-                CobradorIdtextBox.Text = cobrador.CobradorId.ToString();
-                NombretextBox.Text = cobrador.Nombres;
-                ApellidotextBox.Text = cobrador.Apellidos;
-                DirecciontextBox.Text = cobrador.Direccion;
-                TelefonotextBox.Text = cobrador.Telefono;
-                CelulartextBox.Text = cobrador.Celular;
-                CedulatextBox.Text = cobrador.Cedula;
-            }
+            
+                
+                if (CobradorIdtextBox.TextLength > 0)
+                {
+                    int id;
+                    int.TryParse(CobradorIdtextBox.Text, out id);
+                    cobrador.Buscar(id);
+                    NombretextBox.Text = cobrador.Nombres;
+                    ApellidotextBox.Text = cobrador.Apellidos;
+                    DirecciontextBox.Text = cobrador.Direccion;
+                    TelefonotextBox.Text = cobrador.Telefono;
+                    CelulartextBox.Text = cobrador.Celular;
+                    CedulatextBox.Text = cobrador.Cedula;
+                }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

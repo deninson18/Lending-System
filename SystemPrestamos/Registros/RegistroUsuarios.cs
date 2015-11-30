@@ -13,8 +13,8 @@ namespace SystemPrestamos
 {
     public partial class RegistroUsuarios : Form
     {
+        Usuarios user = new Usuarios();
         
-
         public RegistroUsuarios()
         {
             InitializeComponent();
@@ -34,21 +34,21 @@ namespace SystemPrestamos
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Usuarios user = new Usuarios();
 
-            if (NombretextBox.TextLength == 0 || NombreUsuariotextBox.TextLength == 0 || ContrasenatextBox.TextLength == 0 || AreaUsuariotextBox.TextLength == 0)
+            if (NombretextBox.Text.Length == 0 && NombreUsuariotextBox.Text.Length == 0 && ContrasenatextBox.Text.Length == 0 && AreaUsuariotextBox.Text.Length == 0)
                 
             {
                 MessageBox.Show("El campo debe llenarse ");
             }else
-            if(UsuarioIdtextBox.TextLength == 0)
-            {
+
                 user.Nombre = NombretextBox.Text;
                 user.NombreUsuario = NombreUsuariotextBox.Text;
                 user.Contrasena = ContrasenatextBox.Text;
                 user.AreaUsuario = AreaUsuariotextBox.Text;
                 user.Fecha = dateTimePicker.Text;
 
+            if (UsuarioIdtextBox.TextLength == 0)
+            {
                 if (user.Insertar())
                 {
                     MessageBox.Show("Usuario guardado Correctamente");
@@ -58,21 +58,16 @@ namespace SystemPrestamos
                     MessageBox.Show("Error! no se guardo el Usuario");
                 }
             }else 
-                if(UsuarioIdtextBox.TextLength > 0)
+                if(UsuarioIdtextBox.TextLength != 0)
                 {
-                    user.Nombre = NombretextBox.Text;
-                    user.NombreUsuario = NombreUsuariotextBox.Text;
-                    user.Contrasena = ContrasenatextBox.Text;
-                    user.AreaUsuario = AreaUsuariotextBox.Text;
-                    user.Fecha = dateTimePicker.Text;
-
+                    user.UsuarioId = Convert.ToInt32(UsuarioIdtextBox.Text);
                     if (user.Editar())
                     {
                         MessageBox.Show("Usuario Edito Correctamente");
                     }
                     else
                     {
-                        MessageBox.Show("Error! no se ha Editado el Usuario");
+                        MessageBox.Show("Error! no se  Edito el Usuario");
                     }
                 }
         }
@@ -84,7 +79,6 @@ namespace SystemPrestamos
             {
                 InsertarImgpictureBox.Image = Image.FromFile(openFileDialog1.FileName);
             }
-
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

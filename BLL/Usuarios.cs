@@ -45,36 +45,41 @@ namespace BLL
 
         public override bool Insertar()
         {
-            
-                bool retorno = false;
-                retorno = conexion.Ejecutar(String.Format("Insert Into Usuarios(Nombres,NombresUsuarios,Contrasena,AreaUsuarios,Fecha) values('{0}','{1}','{2}','{3}','{4}')", this.Nombre, this.NombreUsuario, this.Contrasena, this.AreaUsuario,this.Fecha));
-                return retorno;
-           
-        }
-
-        public override bool Editar()
-        {
-            bool retorno = false;
-            retorno = conexion.Ejecutar(String.Format("Update Usuarios set Nombres='{0}',NombresUsuarios='{1}',Contrasena='{2}',AreaUsuarios='{3}',Fecha='{4}'", this.Nombre, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.Fecha));
-            return retorno;
-        }
-
-        public override bool Eliminar()
-        {
-            /*
-                 try {
-                    conexion.Ejecutar(String.Format("Delete from Usuarios where UsuarioId", this.UsuarioId));
-                    return true;
+            try { 
+                    bool retorno = false;
+                    retorno = conexion.Ejecutar(String.Format("Insert Into Usuarios(Nombres,NombresUsuarios,Contrasena,AreaUsuarios,Fecha) values('{0}','{1}','{2}','{3}','{4}')", this.Nombre, this.NombreUsuario, this.Contrasena, this.AreaUsuario,this.Fecha));
+                    return retorno;
                 }
                 catch (Exception)
                 {
                     return false;
                 }
+        }
 
-            */
-            bool retorno = false;
-            retorno = conexion.Ejecutar(String.Format("Delete from Usuarios where UsuarioId={0}", this.UsuarioId));
-            return retorno;
+        public override bool Editar()
+        {
+            try { 
+                    bool retorno = false;
+                    retorno = conexion.Ejecutar(String.Format("Update Usuarios set Nombres='{0}',NombresUsuarios='{1}',Contrasena='{2}',AreaUsuarios='{3}',Fecha='{4}' where UsuarioId={5}", this.Nombre, this.NombreUsuario, this.Contrasena, this.AreaUsuario, this.Fecha,this.UsuarioId));
+                    return retorno;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+        }
+
+        public override bool Eliminar()
+        {
+            try {
+                    bool retorno = false;
+                    conexion.Ejecutar(String.Format("Delete from Usuarios where UsuarioId={0}", this.UsuarioId));
+                    return retorno;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
         }
 
         public override bool Buscar(int IdBuscado)
@@ -95,9 +100,8 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-         
-
             return conexion.ObtenerDatos(("Select " + Campos + " from Usuarios where " + Condicion + Orden));
+               
         }
 
         public bool Login(string nombre, string contrasena)

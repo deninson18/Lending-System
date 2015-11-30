@@ -100,6 +100,7 @@
             this.Controls.Add(this.buscaUscomboBox);
             this.MinimizeBox = false;
             this.Name = "ConsultaUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaUsuario";
             ((System.ComponentModel.ISupportInitialize)(this.UsdataGridView)).EndInit();
             this.ResumeLayout(false);

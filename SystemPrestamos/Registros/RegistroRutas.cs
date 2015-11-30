@@ -26,6 +26,7 @@ namespace SystemPrestamos
             NombreRutatextBox.Clear();
             RutaDetalletextBox.Clear();
             CobradorIdcomboBox.SelectedIndex = 0;
+            CobradordataGridView.Rows.Clear();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -34,7 +35,6 @@ namespace SystemPrestamos
             Rutas ruta = new Rutas();
 
             if (NombreRutatextBox.TextLength == 0 || RutaDetalletextBox.TextLength == 0)
-
             {
                 MessageBox.Show("No puede dejar ningun campo vacio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -46,10 +46,13 @@ namespace SystemPrestamos
                 ruta.RutaId = id;
                 ruta.NombreRuta = NombreRutatextBox.Text;
                 ruta.Detalle = RutaDetalletextBox.Text;
-                //ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.SelectedValue);
+                ruta.CobradorId = Convert.ToInt32(CobradorIdcomboBox.SelectedValue);
 
-                ruta.CobradorId = Convert.ToInt32(CobradorlistBox.Text);
-
+                for (int i = 0; i < CobradordataGridView.Rows.Count; i++)
+                {
+                    ruta.AgregarCobrador(ruta.CobradorId, CobradordataGridView.Rows[i].ToString(), "");
+                }
+                
                 if (ruta.Insertar())
                 {
                     MessageBox.Show("Ruta ha sido Registrada");
@@ -70,7 +73,7 @@ namespace SystemPrestamos
 
                 for (int i = 0; i < CobradorIdcomboBox.Items.Count; i++)
                 {
-                 //   ruta.CobradorId += (int)Convert.ToInt32(CobradorlistBox.Items[i]);
+                    //   ruta.CobradorId += (int)Convert.ToInt32(CobradorlistBox.Items[i]);
                 }
                 if (ruta.Editar())
                 {
@@ -103,10 +106,10 @@ namespace SystemPrestamos
                 int id;
                 int.TryParse(RutaIdtextBox.Text, out id);
                 ruta.Buscar(id);
-                RutaIdtextBox.Text = ruta.Cobradores.ToString();
+                RutaIdtextBox.Text = ruta.RutaId.ToString();
                 NombreRutatextBox.Text = ruta.NombreRuta.ToString();
                 RutaDetalletextBox.Text = ruta.Detalle.ToString();
-                CobradorlistBox.Text = ruta.CobradorId.ToString();
+                CobradordataGridView.Text = CobradorIdcomboBox;
             }
         }
 
@@ -144,7 +147,7 @@ namespace SystemPrestamos
 
         private void Agregarbutton_Click_1(object sender, EventArgs e)
         {
-            CobradorlistBox.Items.Add(CobradorIdcomboBox.Text);
+            CobradordataGridView.Rows.Add(CobradorIdcomboBox.SelectedValue,CobradorIdcomboBox.Text);
         }
     }
 }

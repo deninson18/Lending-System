@@ -22,6 +22,7 @@ namespace SystemPrestamos.Consultas
 
         private void buscaCobradorbutton_Click(object sender, EventArgs e)
         {
+           
             Cobradores cobrador = new Cobradores();
             DataTable data = new DataTable();
             string condicion;
@@ -87,12 +88,7 @@ namespace SystemPrestamos.Consultas
                     data = cobrador.Listado("CobradorId,Nombres,Apellidos,Direccion,Telefono,Celular,Cedula", condicion, "");
                     CobradordataGridView.DataSource = data;
                 }
-              
-        }
-
-        private void ConsultaCobradores_Load(object sender, EventArgs e)
-        {
-
+             
         }
     }
 }

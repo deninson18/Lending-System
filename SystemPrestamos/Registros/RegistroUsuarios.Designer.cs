@@ -260,6 +260,7 @@
             this.Controls.Add(this.Nombrelabel);
             this.MaximizeBox = false;
             this.Name = "RegistroUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "0";
             ((System.ComponentModel.ISupportInitialize)(this.InsertarImgpictureBox)).EndInit();
             this.ResumeLayout(false);

@@ -24,9 +24,9 @@ namespace BLL
         public string Telefono { get; set; }
         public string Celular { get; set; }
         public int RutaId { get; set; }
-
-
+        
         public List<Rutas> Rutas { get; set; }
+
         public Clientes()
         {
             this.ClienteId = 0;
@@ -40,12 +40,12 @@ namespace BLL
             this.Telefono = "";
             this.Celular = "";
             this.RutaId = 0;
-
-
-            
         }
-
-       
+        public Clientes(int clienteId, string nombres)
+        {
+            this.ClienteId = clienteId;
+            this.Nombres = nombres;
+        }
 
         public Clientes( int ClienteId, string Nombres, string Apellidos, string Apodos, string Direccion, string Referencia, int Sexo, string Cedula, string Telefono, string Celular,int RutaId)
         {
@@ -74,7 +74,7 @@ namespace BLL
             DataTable dt = new DataTable();
             ConexionDb conexion = new ConexionDb();
                
-            dt = conexion.ObtenerDatos(String.Format(" Select ClienteId,Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular from Clientes where ClienteId={0} ", IdBuscado));
+            dt = conexion.ObtenerDatos(String.Format(" Select * from Clientes where ClienteId = {0} ", IdBuscado));
                 if (dt.Rows.Count > 0)
                 {
                     this.ClienteId = (int)dt.Rows[0]["ClienteId"];
@@ -87,6 +87,7 @@ namespace BLL
                     this.Cedula = dt.Rows[0]["Cedula"].ToString();
                     this.Telefono = dt.Rows[0]["Telefono"].ToString();
                     this.Celular = dt.Rows[0]["Celular"].ToString();
+                   
                 }
                     return dt.Rows.Count > 0;
 
@@ -95,15 +96,14 @@ namespace BLL
                     throw ex;
                 }
         }
-
-
+        
         public override bool Editar()
         {
             try {
             bool retorno = false;
             ConexionDb conexion = new ConexionDb();
-            retorno = conexion.Ejecutar(string.Format("update Clientes set Nombres='{0}', Apellidos='{1}',Apodos='{2}',Direccion='{3}',Referencia='{4}',Sexo='{5}',Cedula='{6}',Telefono='{7}',Celular='{8}', where ClienteId={0} ",
-                this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular));
+            retorno = conexion.Ejecutar(string.Format("update Clientes set Nombres='{0}', Apellidos='{1}',Apodos='{2}',Direccion='{3}',Referencia='{4}',Sexo='{5}',Cedula='{6}',Telefono='{7}',Celular='{8}', where ClienteId={9} ",
+                this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,this.ClienteId));
             return retorno;
             }catch(Exception ex)
             {
@@ -132,7 +132,7 @@ namespace BLL
             bool retorno= false;
             ConexionDb conexion = new ConexionDb();
             retorno = conexion.Ejecutar(string.Format("insert into Clientes(Nombres,Apellidos,Apodos,Direccion,Referencia,Sexo,Cedula,Telefono,Celular,RutaId) values('{0}','{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}',{9})",
-                this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,RutaId));
+            this.Nombres,this.Apellidos,this.Apodos,this.Direccion,this.Referencia,this.Sexo,this.Cedula,this.Telefono,this.Celular,RutaId));
             return retorno;
             }catch(Exception ex)
             {
@@ -144,7 +144,7 @@ namespace BLL
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
             ConexionDb conexion = new ConexionDb();
-            return conexion.ObtenerDatos("Select " + Campos + " from Clientes where " + Condicion + Orden);
+            return conexion.ObtenerDatos("Select " + Campos + " from Clientes where " + Condicion +" "+ Orden);
         }
     }
 }

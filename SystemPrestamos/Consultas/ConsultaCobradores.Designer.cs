@@ -101,8 +101,8 @@
             this.Controls.Add(this.buscaCobradorcomboBox);
             this.MaximizeBox = false;
             this.Name = "ConsultaCobradores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaCobradores";
-            this.Load += new System.EventHandler(this.ConsultaCobradores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CobradordataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

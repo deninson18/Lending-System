@@ -51,6 +51,7 @@
             this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +111,7 @@
             this.cobradoresToolStripMenuItem.Name = "cobradoresToolStripMenuItem";
             this.cobradoresToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cobradoresToolStripMenuItem.Text = "Prestamos";
+            this.cobradoresToolStripMenuItem.Click += new System.EventHandler(this.cobradoresToolStripMenuItem_Click);
             // 
             // cobradoresToolStripMenuItem1
             // 
@@ -150,40 +152,41 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // prestamosToolStripMenuItem
             // 
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
-            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
             // 
             // cobradoresToolStripMenuItem2
             // 
             this.cobradoresToolStripMenuItem2.Name = "cobradoresToolStripMenuItem2";
-            this.cobradoresToolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
+            this.cobradoresToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.cobradoresToolStripMenuItem2.Text = "Cobradores";
             this.cobradoresToolStripMenuItem2.Click += new System.EventHandler(this.cobradoresToolStripMenuItem2_Click);
             // 
             // rutasToolStripMenuItem2
             // 
             this.rutasToolStripMenuItem2.Name = "rutasToolStripMenuItem2";
-            this.rutasToolStripMenuItem2.Size = new System.Drawing.Size(151, 22);
+            this.rutasToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.rutasToolStripMenuItem2.Text = "Rutas";
             this.rutasToolStripMenuItem2.Click += new System.EventHandler(this.rutasToolStripMenuItem2_Click);
             // 
             // atrasosToolStripMenuItem1
             // 
             this.atrasosToolStripMenuItem1.Name = "atrasosToolStripMenuItem1";
-            this.atrasosToolStripMenuItem1.Size = new System.Drawing.Size(151, 22);
+            this.atrasosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.atrasosToolStripMenuItem1.Text = "Atrasos";
             // 
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuariosToolStripMenuItem1});
+            this.usuariosToolStripMenuItem1,
+            this.reportesToolStripMenuItem});
             this.herramientasToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.herramientasToolStripMenuItem.Image = global::SystemPrestamos.Properties.Resources.herramienta;
             this.herramientasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -198,7 +201,7 @@
             this.registrarUsuarioToolStripMenuItem,
             this.consultarUsuarioToolStripMenuItem});
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // registrarUsuarioToolStripMenuItem
@@ -272,6 +275,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Lending System";
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,5 +333,6 @@
         private System.Windows.Forms.ToolStripMenuItem registrarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarUsuarioToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

@@ -34,10 +34,7 @@ namespace SystemPrestamos
         }
 
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-        
-        }
+       
 
         private void IniciarButton_Click(object sender, EventArgs e)
         {
@@ -52,46 +49,16 @@ namespace SystemPrestamos
              {
                  MessageBox.Show("Usuario o Contraseña Incorrectas");
         }
-        }
 
-        private void SysPrestamoslabel_Click(object sender, EventArgs e)
-        {
+     }
 
-        }
-
-        private void usuarioTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void ContrasenaTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
+       
 
         private void CancelarButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void usuarioTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContrasenaTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

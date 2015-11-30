@@ -83,6 +83,16 @@ namespace SystemPrestamos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cancel__Red {
+            get {
+                object obj = ResourceManager.GetObject("Cancel__Red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion_hotmail {
             get {
                 object obj = ResourceManager.GetObject("cerrar-sesion-hotmail", resourceCulture);
@@ -126,6 +136,16 @@ namespace SystemPrestamos.Properties {
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_locked {
+            get {
+                object obj = ResourceManager.GetObject("file_locked", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

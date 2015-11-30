@@ -41,8 +41,11 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
-            this.CobradorlistBox = new System.Windows.Forms.ListBox();
             this.Agregarbutton = new System.Windows.Forms.Button();
+            this.CobradordataGridView = new System.Windows.Forms.DataGridView();
+            this.CobradorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.CobradordataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Registrolabel
@@ -74,7 +77,7 @@
             this.RutaIdtextBox.MaxLength = 10;
             this.RutaIdtextBox.Name = "RutaIdtextBox";
             this.RutaIdtextBox.Size = new System.Drawing.Size(336, 23);
-            this.RutaIdtextBox.TabIndex = 6;
+            this.RutaIdtextBox.TabIndex = 1;
             this.RutaIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RutaIdtextBox_KeyPress);
             // 
             // NombreRutalabel
@@ -95,7 +98,7 @@
             this.NombreRutatextBox.MaxLength = 100;
             this.NombreRutatextBox.Name = "NombreRutatextBox";
             this.NombreRutatextBox.Size = new System.Drawing.Size(336, 23);
-            this.NombreRutatextBox.TabIndex = 0;
+            this.NombreRutatextBox.TabIndex = 6;
             // 
             // RutaDetallelabel
             // 
@@ -115,7 +118,7 @@
             this.RutaDetalletextBox.MaxLength = 200;
             this.RutaDetalletextBox.Name = "RutaDetalletextBox";
             this.RutaDetalletextBox.Size = new System.Drawing.Size(336, 23);
-            this.RutaDetalletextBox.TabIndex = 1;
+            this.RutaDetalletextBox.TabIndex = 8;
             // 
             // CobradorIdlabel
             // 
@@ -136,7 +139,7 @@
             this.CobradorIdcomboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CobradorIdcomboBox.Name = "CobradorIdcomboBox";
             this.CobradorIdcomboBox.Size = new System.Drawing.Size(336, 23);
-            this.CobradorIdcomboBox.TabIndex = 2;
+            this.CobradorIdcomboBox.TabIndex = 10;
             // 
             // Buscarbutton
             // 
@@ -145,7 +148,7 @@
             this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(37, 41);
-            this.Buscarbutton.TabIndex = 7;
+            this.Buscarbutton.TabIndex = 4;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
@@ -157,7 +160,7 @@
             this.Eliminarbutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(73, 62);
-            this.Eliminarbutton.TabIndex = 5;
+            this.Eliminarbutton.TabIndex = 23;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -171,7 +174,7 @@
             this.Guardarbutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(71, 62);
-            this.Guardarbutton.TabIndex = 4;
+            this.Guardarbutton.TabIndex = 20;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Guardarbutton.UseVisualStyleBackColor = true;
@@ -185,38 +188,53 @@
             this.Nuevobutton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(62, 62);
-            this.Nuevobutton.TabIndex = 3;
+            this.Nuevobutton.TabIndex = 18;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // CobradorlistBox
-            // 
-            this.CobradorlistBox.FormattingEnabled = true;
-            this.CobradorlistBox.ItemHeight = 15;
-            this.CobradorlistBox.Location = new System.Drawing.Point(16, 316);
-            this.CobradorlistBox.Name = "CobradorlistBox";
-            this.CobradorlistBox.Size = new System.Drawing.Size(334, 94);
-            this.CobradorlistBox.TabIndex = 32;
             // 
             // Agregarbutton
             // 
             this.Agregarbutton.Location = new System.Drawing.Point(361, 287);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(75, 23);
-            this.Agregarbutton.TabIndex = 33;
+            this.Agregarbutton.TabIndex = 13;
             this.Agregarbutton.Text = "Agregar";
             this.Agregarbutton.UseVisualStyleBackColor = true;
             this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click_1);
+            // 
+            // CobradordataGridView
+            // 
+            this.CobradordataGridView.AllowUserToAddRows = false;
+            this.CobradordataGridView.AllowUserToDeleteRows = false;
+            this.CobradordataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CobradordataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CobradorId,
+            this.Nombres});
+            this.CobradordataGridView.Location = new System.Drawing.Point(16, 316);
+            this.CobradordataGridView.Name = "CobradordataGridView";
+            this.CobradordataGridView.ReadOnly = true;
+            this.CobradordataGridView.Size = new System.Drawing.Size(334, 108);
+            this.CobradordataGridView.TabIndex = 33;
+            // 
+            // CobradorId
+            // 
+            this.CobradorId.HeaderText = "CobradorId";
+            this.CobradorId.Name = "CobradorId";
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
             // 
             // RegistroRutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 534);
+            this.Controls.Add(this.CobradordataGridView);
             this.Controls.Add(this.Agregarbutton);
-            this.Controls.Add(this.CobradorlistBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.CobradorIdcomboBox);
             this.Controls.Add(this.CobradorIdlabel);
@@ -234,8 +252,10 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "RegistroRutas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroRutas";
             this.Load += new System.EventHandler(this.RegistroRutas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.CobradordataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,7 +276,9 @@
         private System.Windows.Forms.Label CobradorIdlabel;
         private System.Windows.Forms.ComboBox CobradorIdcomboBox;
         private System.Windows.Forms.Button Buscarbutton;
-        private System.Windows.Forms.ListBox CobradorlistBox;
         private System.Windows.Forms.Button Agregarbutton;
+        private System.Windows.Forms.DataGridView CobradordataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CobradorId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
     }
 }

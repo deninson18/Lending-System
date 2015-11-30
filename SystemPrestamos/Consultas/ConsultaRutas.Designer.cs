@@ -97,6 +97,7 @@
             this.Controls.Add(this.buscaRutacomboBox);
             this.Controls.Add(this.buscaRutatextBox);
             this.Name = "ConsultaRutas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaRutas";
             ((System.ComponentModel.ISupportInitialize)(this.RutasdataGridView)).EndInit();
             this.ResumeLayout(false);

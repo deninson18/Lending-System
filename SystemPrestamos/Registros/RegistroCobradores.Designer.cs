@@ -282,6 +282,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "RegistroCobradores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCobradores";
             this.ResumeLayout(false);
             this.PerformLayout();
