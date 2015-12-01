@@ -11,17 +11,17 @@ namespace BLL
     public class Prestamos : ClaseMaestra
     {
 
-        ConexionDb conexion = new ConexionDb(); 
+        ConexionDb conexion = new ConexionDb();
 
         public int PrestamoId { get; set; }
         public int ClienteId { get; set; }
         public int RutaId { get; set; }
         public string FechaInicial { get; set; }
-        public string FechaVencimiento { get; set; }
+        public string FechaVencimiento { get; set; } 
         public double Monto { get; set; }
         public int SemanaNo { get; set; }
         public double Cuota { get; set; }
-        public int Valorcuota { get; set; }
+        public int Valorcuota { get; set; } 
         public double Interes { get; set; }
 
         public List<Clientes> Clientes{ get; set; }
