@@ -13,7 +13,7 @@ namespace BLL
     {
 
         ConexionDb conexion = new ConexionDb();
-
+         
         public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string NombreUsuario { get; set; }
