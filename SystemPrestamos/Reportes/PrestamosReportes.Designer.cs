@@ -96,7 +96,9 @@
             this.Controls.Add(this.Rutasbutton);
             this.Controls.Add(this.Clientesbutton);
             this.Controls.Add(this.Cobradoresbutton);
+            this.MaximizeBox = false;
             this.Name = "PrestamosReportes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrestamosReportes";
             this.ResumeLayout(false);
 

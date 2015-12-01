@@ -115,15 +115,6 @@ namespace BLL
                 }
         }
 
-        public DataTable Consultar(string campo, string consulta)
-        {
-            try { 
-                    return conexion.ObtenerDatos("select * from Cobradores where " + campo + " = " + consulta);
-                }catch(Exception ex)
-                {
-                    throw ex;
-                }
-        }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {

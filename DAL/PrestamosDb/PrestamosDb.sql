@@ -29,14 +29,13 @@ go
 create table Clientes(ClienteId int identity primary key,
 Nombres varchar(30),Apellidos varchar(30),Apodos varchar(30),
 Direccion varchar(100),Referencia varchar(50),Sexo int,
-Cedula varchar(13),Telefono varchar(14),Celular varchar(14),
-RutaId int references Rutas(RutaId));
+Cedula varchar(13),Telefono varchar(14),Celular varchar(14));
 go
 create table Prestamos(PrestamoId int identity primary key,ClienteId int references Clientes(ClienteId),
 RutaId int references Rutas(RutaId),FechaInicial varchar(30),FechaVencimiento varchar(30),Monto float, SemanaNo int,
  ValorCuota int,Interes float,Cuota float);
 go                            
-create table Atrasos(AtrasoId int identity primary key,CantidadAtraso int);
+create table Atrasos(AtrasoId int identity primary key,PrestamoId int references Prestamos(PrestamoId),Cantidad int,Atraso float,Total float);
 
 
 select * from Usuarios;select * from Rutas;select * from Cobradores;
@@ -46,7 +45,7 @@ select * from  RutasCobradores;
 drop table Usuarios;drop table Rutas;drop table Cobradores;drop table Clientes;
 drop table Prestamos;drop table Atrasos;drop table RutasCobradores;
 
---insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Deninson', 'deninson18', 'Administrador','12345','12-03-2015');
+insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Deninson', 'deninson18', 'Administrador','12345','12-03-2015');
 --insert into Usuarios(Nombres,NombresUsuarios,AreaUsuarios,Contrasena,Fecha) values('Natanael', 'elnata93', 'Administrador','nrpabc','12-03-2015');
 --delete from Cobradores where CobradorId=2;
                             

@@ -75,13 +75,14 @@ namespace SystemPrestamos
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             Cobradores cobrador = new Cobradores();
-            if (CobradorIdtextBox.TextLength == 0)
+            if (CobradorIdtextBox.Text.Trim() == "")
             {
-                ErrorProvider error = new ErrorProvider();
-                error.Clear();
-                error.SetError(CobradorIdtextBox, "Debe especificar el id");
+                CobradorerrorProvider.SetError(CobradorIdtextBox, "Especificar CobradorId ");
+                CobradorIdtextBox.Focus();
             }
-            else
+            else{
+                CobradorerrorProvider.Clear();
+            }
             
                 
                 if (CobradorIdtextBox.TextLength > 0)
@@ -112,9 +113,7 @@ namespace SystemPrestamos
                 {
                     MessageBox.Show("Cobrador no se elimino Correctamente");
                 }
-
             }
-
         }
 
         private void CobradorIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -151,11 +150,6 @@ namespace SystemPrestamos
         {
             Validacion.Validacion v = new Validacion.Validacion();
             v.Letras(e);
-        }
-
-        private void TelefonotextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
     }
 }

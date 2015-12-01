@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Nombrelabel = new System.Windows.Forms.Label();
             this.NombreUsuariolabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +48,9 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InsertarImgpictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Nombrelabel
@@ -95,7 +98,6 @@
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(214, 20);
             this.NombretextBox.TabIndex = 0;
-            this.NombretextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombretextBox_KeyPress);
             // 
             // NombreUsuariotextBox
             // 
@@ -155,6 +157,7 @@
             this.UsuarioIdtextBox.Size = new System.Drawing.Size(214, 20);
             this.UsuarioIdtextBox.TabIndex = 9;
             this.UsuarioIdtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioIdtextBox_KeyPress);
+            this.UsuarioIdtextBox.Validated += new System.EventHandler(this.UsuarioIdtextBox_Validated);
             // 
             // AreaUsuariolabel
             // 
@@ -235,6 +238,10 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // RegistroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +270,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "0";
             ((System.ComponentModel.ISupportInitialize)(this.InsertarImgpictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +296,6 @@
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Label AreaUsuariolabel;
         private System.Windows.Forms.TextBox AreaUsuariotextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

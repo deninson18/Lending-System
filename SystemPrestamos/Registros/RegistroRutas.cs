@@ -109,7 +109,7 @@ namespace SystemPrestamos
                 RutaIdtextBox.Text = ruta.RutaId.ToString();
                 NombreRutatextBox.Text = ruta.NombreRuta.ToString();
                 RutaDetalletextBox.Text = ruta.Detalle.ToString();
-                CobradordataGridView.Text = CobradorIdcomboBox;
+                //CobradordataGridView.Text = CobradorIdcomboBox;
             }
         }
 

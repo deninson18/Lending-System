@@ -11,7 +11,7 @@ namespace BLL
     public class Prestamos : ClaseMaestra
     {
 
-        ConexionDb conexion = new ConexionDb();
+        ConexionDb conexion = new ConexionDb(); 
 
         public int PrestamoId { get; set; }
         public int ClienteId { get; set; }
@@ -42,8 +42,13 @@ namespace BLL
             this.Interes = 0;
 
         }
+        public Prestamos(int prestamoId)
+        {
+            this.PrestamoId = prestamoId;
+          
+        }
 
-        public Prestamos(int prestamoId, int clienteId, int rutaId, string fechaInicial, string fechaVencimiento, double monto, int SemanaNo, double cuota, int Valorcuota, double interes)
+        public Prestamos(int prestamoId, int clienteId, int rutaId, string fechaInicial, string fechaVencimiento, double monto, int semanaNo, double cuota, int Valorcuota, double interes)
         {
             this.PrestamoId = prestamoId;
             this.ClienteId = clienteId;
@@ -51,7 +56,7 @@ namespace BLL
             this.FechaInicial = fechaInicial;
             this.FechaVencimiento = fechaVencimiento;
             this.Monto = monto;
-            this.SemanaNo = SemanaNo;
+            this.SemanaNo = semanaNo;
             this.Cuota = cuota;
             this.Interes = interes;
 
@@ -76,8 +81,8 @@ namespace BLL
         public override bool Editar()
         {
             bool retorno = false;
-            retorno = conexion.Ejecutar(string.Format("update Clientes set ClienteId={0},RutaId={1} Fechainical='{2}', Fechainical='{3}',Monto={4},SemanaNo={5},Cuota={6},ValorCuota={7},Interes={8} where PrestamoId={9} ",
-              this.FechaInicial, FechaVencimiento, Monto, this.SemanaNo, this.Cuota, this.Valorcuota, this.Interes,this.PrestamoId));
+            retorno = conexion.Ejecutar(string.Format("Update Prestamos set ClienteId={0},RutaId={1}, FechaInicial='{2}', FechaVencimiento='{3}',Monto={4},SemanaNo={5},Cuota={6},ValorCuota={7},Interes={8} where PrestamoId={9}",
+             this.ClienteId,this.RutaId, this.FechaInicial, FechaVencimiento, Monto, this.SemanaNo, this.Cuota, this.Valorcuota, this.Interes,this.PrestamoId));
             return retorno;
         }
 
@@ -93,7 +98,7 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
                  DataTable dt = new DataTable();
-                 DataTable dtRuta = new DataTable();
+               
                  dt = conexion.ObtenerDatos(String.Format("Select * from Prestamos where PrestamoId= {0} ", IdBuscado));
                  if (dt.Rows.Count > 0)
                  {

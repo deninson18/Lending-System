@@ -39,6 +39,7 @@
             // buscaRutatextBox
             // 
             this.buscaRutatextBox.Location = new System.Drawing.Point(109, 39);
+            this.buscaRutatextBox.MaxLength = 30;
             this.buscaRutatextBox.Name = "buscaRutatextBox";
             this.buscaRutatextBox.Size = new System.Drawing.Size(187, 20);
             this.buscaRutatextBox.TabIndex = 0;

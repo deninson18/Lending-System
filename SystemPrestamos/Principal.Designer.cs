@@ -46,12 +46,12 @@
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,7 @@
             this.atrasosToolStripMenuItem.Name = "atrasosToolStripMenuItem";
             this.atrasosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.atrasosToolStripMenuItem.Text = "Atrasos";
+            this.atrasosToolStripMenuItem.Click += new System.EventHandler(this.atrasosToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -161,6 +162,7 @@
             this.prestamosToolStripMenuItem.Name = "prestamosToolStripMenuItem";
             this.prestamosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.prestamosToolStripMenuItem.Text = "Prestamos";
+            this.prestamosToolStripMenuItem.Click += new System.EventHandler(this.prestamosToolStripMenuItem_Click);
             // 
             // cobradoresToolStripMenuItem2
             // 
@@ -181,6 +183,7 @@
             this.atrasosToolStripMenuItem1.Name = "atrasosToolStripMenuItem1";
             this.atrasosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.atrasosToolStripMenuItem1.Text = "Atrasos";
+            this.atrasosToolStripMenuItem1.Click += new System.EventHandler(this.atrasosToolStripMenuItem1_Click);
             // 
             // herramientasToolStripMenuItem
             // 
@@ -201,7 +204,7 @@
             this.registrarUsuarioToolStripMenuItem,
             this.consultarUsuarioToolStripMenuItem});
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // registrarUsuarioToolStripMenuItem
@@ -217,6 +220,13 @@
             this.consultarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.consultarUsuarioToolStripMenuItem.Text = "Consultar Usuario";
             this.consultarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.consultarUsuarioToolStripMenuItem_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // acercaToolStripMenuItem
             // 
@@ -274,13 +284,6 @@
             this.label1.Size = new System.Drawing.Size(397, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lending System";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // Principal
             // 

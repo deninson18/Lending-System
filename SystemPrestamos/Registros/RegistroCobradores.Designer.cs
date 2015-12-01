@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CobradorIdtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.CobradorerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CobradorerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -183,7 +186,6 @@
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.Size = new System.Drawing.Size(357, 23);
             this.TelefonotextBox.TabIndex = 3;
-            this.TelefonotextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TelefonotextBox_MaskInputRejected);
             // 
             // CelulartextBox
             // 
@@ -254,6 +256,10 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
+            // CobradorerrorProvider
+            // 
+            this.CobradorerrorProvider.ContainerControl = this;
+            // 
             // RegistroCobradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -284,6 +290,7 @@
             this.Name = "RegistroCobradores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCobradores";
+            ((System.ComponentModel.ISupportInitialize)(this.CobradorerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,5 +317,6 @@
         private System.Windows.Forms.MaskedTextBox TelefonotextBox;
         private System.Windows.Forms.MaskedTextBox CelulartextBox;
         private System.Windows.Forms.MaskedTextBox CedulatextBox;
+        private System.Windows.Forms.ErrorProvider CobradorerrorProvider;
     }
 }

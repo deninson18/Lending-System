@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,8 +44,6 @@
             this.referenciaCtextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.RutacomboBox = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.MasculinoradioButton = new System.Windows.Forms.RadioButton();
             this.FemeninoradioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,7 +55,9 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,9 +66,9 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.Size = new System.Drawing.Size(69, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo Id";
+            this.label1.Text = "Cliente Id";
             // 
             // label2
             // 
@@ -136,7 +137,6 @@
             this.idCtextBox.Name = "idCtextBox";
             this.idCtextBox.Size = new System.Drawing.Size(216, 20);
             this.idCtextBox.TabIndex = 12;
-            this.idCtextBox.TextChanged += new System.EventHandler(this.idCtextBox_TextChanged);
             this.idCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idCtextBox_KeyPress);
             // 
             // nombreCtextBox
@@ -146,8 +146,7 @@
             this.nombreCtextBox.Name = "nombreCtextBox";
             this.nombreCtextBox.Size = new System.Drawing.Size(287, 20);
             this.nombreCtextBox.TabIndex = 0;
-            this.nombreCtextBox.TextChanged += new System.EventHandler(this.nombreCtextBox_TextChanged_1);
-            this.nombreCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreCtextBox_KeyPress);
+             this.nombreCtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreCtextBox_KeyPress);
             // 
             // apellidoCtextBox
             // 
@@ -203,25 +202,6 @@
             this.label10.Size = new System.Drawing.Size(55, 15);
             this.label10.TabIndex = 21;
             this.label10.Text = "Celular";
-            // 
-            // RutacomboBox
-            // 
-            this.RutacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RutacomboBox.FormattingEnabled = true;
-            this.RutacomboBox.Location = new System.Drawing.Point(316, 350);
-            this.RutacomboBox.Name = "RutacomboBox";
-            this.RutacomboBox.Size = new System.Drawing.Size(309, 21);
-            this.RutacomboBox.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(313, 333);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 15);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "Ruta";
             // 
             // MasculinoradioButton
             // 
@@ -309,7 +289,7 @@
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.Location = new System.Drawing.Point(352, 388);
             this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(56, 67);
+            this.Eliminarbutton.Size = new System.Drawing.Size(56, 57);
             this.Eliminarbutton.TabIndex = 11;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -322,7 +302,7 @@
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Guardarbutton.Location = new System.Drawing.Point(264, 388);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(61, 67);
+            this.Guardarbutton.Size = new System.Drawing.Size(61, 57);
             this.Guardarbutton.TabIndex = 10;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -335,12 +315,16 @@
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Nuevobutton.Location = new System.Drawing.Point(188, 388);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(54, 67);
+            this.Nuevobutton.Size = new System.Drawing.Size(54, 57);
             this.Nuevobutton.TabIndex = 9;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.button_Click);
+            // 
+            // ClienteerrorProvider
+            // 
+            this.ClienteerrorProvider.ContainerControl = this;
             // 
             // RegistroClientes
             // 
@@ -352,8 +336,6 @@
             this.Controls.Add(this.cedulaCtextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.RutacomboBox);
             this.Controls.Add(this.buscarbutton);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Eliminarbutton);
@@ -377,9 +359,9 @@
             this.Name = "RegistroClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroCliente";
-            this.Load += new System.EventHandler(this.RegistroCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,8 +388,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buscarbutton;
-        private System.Windows.Forms.ComboBox RutacomboBox;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton MasculinoradioButton;
         private System.Windows.Forms.RadioButton FemeninoradioButton;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -415,5 +395,6 @@
         private System.Windows.Forms.MaskedTextBox cedulaCtextBox;
         private System.Windows.Forms.MaskedTextBox telefonoCtextBox;
         private System.Windows.Forms.MaskedTextBox celularCtextBox;
+        private System.Windows.Forms.ErrorProvider ClienteerrorProvider;
     }
 }

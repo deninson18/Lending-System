@@ -111,5 +111,23 @@ namespace SystemPrestamos
             Reportes.PrestamosReportes pr = new Reportes.PrestamosReportes();
             pr.Show();
         }
+
+        private void atrasosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroAtrasos atraso = new RegistroAtrasos();
+            atraso.Show();
+        }
+
+        private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaPrestamos prestamo = new Consultas.ConsultaPrestamos();
+            prestamo.Show();
+        }
+
+        private void atrasosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.ConsultaAtrasos atraso = new Consultas.ConsultaAtrasos();
+            atraso.Show();
+        }
     }
 }

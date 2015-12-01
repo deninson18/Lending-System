@@ -14,7 +14,7 @@ namespace SystemPrestamos
     public partial class RegistroUsuarios : Form
     {
         Usuarios user = new Usuarios();
-        
+
         public RegistroUsuarios()
         {
             InitializeComponent();
@@ -35,41 +35,52 @@ namespace SystemPrestamos
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
 
-            if (NombretextBox.Text.Length == 0 && NombreUsuariotextBox.Text.Length == 0 && ContrasenatextBox.Text.Length == 0 && AreaUsuariotextBox.Text.Length == 0)
-                
-            {
-                MessageBox.Show("El campo debe llenarse ");
-            }else
+            if (NombretextBox.TextLength == 0 || NombreUsuariotextBox.TextLength == 0 || ContrasenatextBox.TextLength == 0 || AreaUsuariotextBox.TextLength == 0)
 
-                user.Nombre = NombretextBox.Text;
+            {
+                MessageBox.Show("Faltan Campos Por Llenar ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                if (UsuarioIdtextBox.TextLength == 0)
+            {
+                user.Nombres = NombretextBox.Text;
                 user.NombreUsuario = NombreUsuariotextBox.Text;
                 user.Contrasena = ContrasenatextBox.Text;
                 user.AreaUsuario = AreaUsuariotextBox.Text;
                 user.Fecha = dateTimePicker.Text;
 
-            if (UsuarioIdtextBox.TextLength == 0)
-            {
                 if (user.Insertar())
                 {
-                    MessageBox.Show("Usuario guardado Correctamente");
+                    MessageBox.Show("Usuario guardado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Nuevobutton.PerformClick();
                 }
                 else
                 {
-                    MessageBox.Show("Error! no se guardo el Usuario");
+                    MessageBox.Show("Error! no se guardo el Usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }else 
-                if(UsuarioIdtextBox.TextLength != 0)
+            }
+            else
+                if (UsuarioIdtextBox.TextLength > 0)
+            {
+
+                int usId;
+                int.TryParse(UsuarioIdtextBox.Text, out usId);
+                user.UsuarioId = usId;
+                user.Nombres = NombretextBox.Text;
+                user.NombreUsuario = NombreUsuariotextBox.Text;
+                user.Contrasena = ContrasenatextBox.Text;
+                user.AreaUsuario = AreaUsuariotextBox.Text;
+                user.Fecha = dateTimePicker.Text;
+
+            if (user.Editar())
                 {
-                    user.UsuarioId = Convert.ToInt32(UsuarioIdtextBox.Text);
-                    if (user.Editar())
-                    {
-                        MessageBox.Show("Usuario Edito Correctamente");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error! no se  Edito el Usuario");
-                    }
+                    MessageBox.Show("Usuario Edito Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Error! no se  Edito el Usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private void AgregarImgbutton_Click(object sender, EventArgs e)
@@ -79,47 +90,62 @@ namespace SystemPrestamos
             {
                 InsertarImgpictureBox.Image = Image.FromFile(openFileDialog1.FileName);
             }
+
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
 
-            if (UsuarioIdtextBox.TextLength > 0)
-            {
-                Usuarios user = new Usuarios();
-                user.UsuarioId = int.Parse(UsuarioIdtextBox.Text);
-                if (user.Eliminar())
-                {
-                    MessageBox.Show("Usuario se ha Eliminado Correctamente");
-                }
-                else
-                {
-                    MessageBox.Show("Usuario no se ha Eliminado Correctamente");
-                }
 
+            if (UsuarioIdtextBox.TextLength == 0)
+            {
+                MessageBox.Show("Debe especificar el ID", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+
+                if (UsuarioIdtextBox.Text.Length > 0)
+                {
+
+                    int usId;
+                    int.TryParse(UsuarioIdtextBox.Text, out usId);
+                    user.UsuarioId = usId;
+                    if (user.Eliminar())
+                    {
+                        MessageBox.Show("Usuario Eliminado correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Nuevobutton.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al eliminar el usuario", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            Usuarios user = new Usuarios();
-            if (UsuarioIdtextBox.TextLength == 0)
+            if (UsuarioIdtextBox.Text.Trim() == "")
             {
-                ErrorProvider error = new ErrorProvider();
-                error.Clear();
-                error.SetError(UsuarioIdtextBox, "Debe especificar el id");
+                errorProvider.SetError(UsuarioIdtextBox, "especificar Id");
+                UsuarioIdtextBox.Focus();
             }
             else
+            {
+                errorProvider.Clear();
+            }
+            if (UsuarioIdtextBox.TextLength >  0)
             {
                 int id;
                 int.TryParse(UsuarioIdtextBox.Text, out id);
                 user.Buscar(id);
-                UsuarioIdtextBox.Text = user.UsuarioId.ToString();
-                NombretextBox.Text = user.Nombre;
+                NombretextBox.Text = user.Nombres;
                 NombreUsuariotextBox.Text = user.NombreUsuario;
                 ContrasenatextBox.Text = user.Contrasena;
-                AreaUsuariotextBox.Text = user.AreaUsuario; 
+                AreaUsuariotextBox.Text = user.AreaUsuario;
             }
+            
+            
         }
 
         private void UsuarioIdtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -138,6 +164,16 @@ namespace SystemPrestamos
         {
             Validacion.Validacion v = new Validacion.Validacion();
             v.Letras(e);
+        }
+
+        private void UsuarioIdtextBox_Validated(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void NombretextBox_Validated(object sender, EventArgs e)
+        {
+
         }
     }
 }
