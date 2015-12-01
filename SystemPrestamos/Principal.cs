@@ -129,5 +129,12 @@ namespace SystemPrestamos
             Consultas.ConsultaAtrasos atraso = new Consultas.ConsultaAtrasos();
             atraso.Show();
         }
+
+        private void acercaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("LendingSystem es un sistema que cubre todas las necesidades de gestión de préstamos, ya que ofrece todas las herramientas para controlar todo el proceso de los mismos, desde la solicitud del préstamo hasta los reportes necesarios para conocer al detalle el estado tu negocio. ", 
+                "Acerca de Lending System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }

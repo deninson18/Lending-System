@@ -33,11 +33,12 @@
             this.Rutasbutton = new System.Windows.Forms.Button();
             this.Prestamosbutton = new System.Windows.Forms.Button();
             this.Atrasosbutton = new System.Windows.Forms.Button();
+            this.Usuariosbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Cobradoresbutton
             // 
-            this.Cobradoresbutton.Location = new System.Drawing.Point(83, 85);
+            this.Cobradoresbutton.Location = new System.Drawing.Point(86, 157);
             this.Cobradoresbutton.Name = "Cobradoresbutton";
             this.Cobradoresbutton.Size = new System.Drawing.Size(88, 43);
             this.Cobradoresbutton.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // Clientesbutton
             // 
-            this.Clientesbutton.Location = new System.Drawing.Point(83, 12);
+            this.Clientesbutton.Location = new System.Drawing.Point(86, 85);
             this.Clientesbutton.Name = "Clientesbutton";
             this.Clientesbutton.Size = new System.Drawing.Size(88, 46);
             this.Clientesbutton.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // Rutasbutton
             // 
-            this.Rutasbutton.Location = new System.Drawing.Point(83, 159);
+            this.Rutasbutton.Location = new System.Drawing.Point(85, 222);
             this.Rutasbutton.Name = "Rutasbutton";
             this.Rutasbutton.Size = new System.Drawing.Size(88, 44);
             this.Rutasbutton.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // Prestamosbutton
             // 
-            this.Prestamosbutton.Location = new System.Drawing.Point(83, 228);
+            this.Prestamosbutton.Location = new System.Drawing.Point(85, 291);
             this.Prestamosbutton.Name = "Prestamosbutton";
             this.Prestamosbutton.Size = new System.Drawing.Size(88, 42);
             this.Prestamosbutton.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // Atrasosbutton
             // 
-            this.Atrasosbutton.Location = new System.Drawing.Point(83, 296);
+            this.Atrasosbutton.Location = new System.Drawing.Point(85, 359);
             this.Atrasosbutton.Name = "Atrasosbutton";
             this.Atrasosbutton.Size = new System.Drawing.Size(88, 42);
             this.Atrasosbutton.TabIndex = 4;
@@ -85,12 +86,23 @@
             this.Atrasosbutton.UseVisualStyleBackColor = true;
             this.Atrasosbutton.Click += new System.EventHandler(this.Atrasosbutton_Click);
             // 
+            // Usuariosbutton
+            // 
+            this.Usuariosbutton.Location = new System.Drawing.Point(86, 21);
+            this.Usuariosbutton.Name = "Usuariosbutton";
+            this.Usuariosbutton.Size = new System.Drawing.Size(89, 49);
+            this.Usuariosbutton.TabIndex = 5;
+            this.Usuariosbutton.Text = "Usuarios";
+            this.Usuariosbutton.UseVisualStyleBackColor = true;
+            this.Usuariosbutton.Click += new System.EventHandler(this.Usuariosbutton_Click);
+            // 
             // PrestamosReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(254, 350);
+            this.ClientSize = new System.Drawing.Size(254, 428);
+            this.Controls.Add(this.Usuariosbutton);
             this.Controls.Add(this.Atrasosbutton);
             this.Controls.Add(this.Prestamosbutton);
             this.Controls.Add(this.Rutasbutton);
@@ -111,5 +123,6 @@
         private System.Windows.Forms.Button Rutasbutton;
         private System.Windows.Forms.Button Prestamosbutton;
         private System.Windows.Forms.Button Atrasosbutton;
+        private System.Windows.Forms.Button Usuariosbutton;
     }
 }

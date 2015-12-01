@@ -180,6 +180,12 @@
       <DependentUpon>RutasReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\UsuariosReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuariosReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\VisorAtrasosReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,12 @@
     </Compile>
     <Compile Include="Reportes\VisorRutasReporte.Designer.cs">
       <DependentUpon>VisorRutasReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\VisorUsuariosReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\VisorUsuariosReporte.Designer.cs">
+      <DependentUpon>VisorUsuariosReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Validacion\Validacion.cs" />
     <EmbeddedResource Include="Consultas\ConsultaAtrasos.resx">
@@ -281,6 +293,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RutasReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\UsuariosReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UsuariosReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VisorAtrasosReporte.resx">
       <DependentUpon>VisorAtrasosReporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\VisorRutasReporte.resx">
       <DependentUpon>VisorRutasReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VisorUsuariosReporte.resx">
+      <DependentUpon>VisorUsuariosReporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
