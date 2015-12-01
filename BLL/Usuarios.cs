@@ -9,7 +9,7 @@ using DAL;
 namespace BLL 
 {
 
-    public class Usuarios : ClaseMaestra
+    public class Usuarios : ClaseMaestra 
     {
 
         ConexionDb conexion = new ConexionDb();
