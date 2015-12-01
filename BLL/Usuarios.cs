@@ -9,11 +9,11 @@ using DAL;
 namespace BLL 
 {
 
-    public class Usuarios : ClaseMaestra
+    public class Usuarios : ClaseMaestra 
     {
 
         ConexionDb conexion = new ConexionDb();
-         
+
         public int UsuarioId { get; set; }
         public string Nombres { get; set; }
         public string NombreUsuario { get; set; }

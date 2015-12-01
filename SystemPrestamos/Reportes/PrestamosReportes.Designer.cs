@@ -37,9 +37,9 @@
             // 
             // Cobradoresbutton
             // 
-            this.Cobradoresbutton.Location = new System.Drawing.Point(141, 210);
+            this.Cobradoresbutton.Location = new System.Drawing.Point(83, 85);
             this.Cobradoresbutton.Name = "Cobradoresbutton";
-            this.Cobradoresbutton.Size = new System.Drawing.Size(75, 23);
+            this.Cobradoresbutton.Size = new System.Drawing.Size(88, 43);
             this.Cobradoresbutton.TabIndex = 0;
             this.Cobradoresbutton.Text = "Cobradores";
             this.Cobradoresbutton.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@
             // 
             // Clientesbutton
             // 
-            this.Clientesbutton.Location = new System.Drawing.Point(141, 119);
+            this.Clientesbutton.Location = new System.Drawing.Point(83, 12);
             this.Clientesbutton.Name = "Clientesbutton";
-            this.Clientesbutton.Size = new System.Drawing.Size(75, 23);
+            this.Clientesbutton.Size = new System.Drawing.Size(88, 46);
             this.Clientesbutton.TabIndex = 1;
             this.Clientesbutton.Text = "Clientes";
             this.Clientesbutton.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@
             // 
             // Rutasbutton
             // 
-            this.Rutasbutton.Location = new System.Drawing.Point(321, 119);
+            this.Rutasbutton.Location = new System.Drawing.Point(83, 159);
             this.Rutasbutton.Name = "Rutasbutton";
-            this.Rutasbutton.Size = new System.Drawing.Size(74, 23);
+            this.Rutasbutton.Size = new System.Drawing.Size(88, 44);
             this.Rutasbutton.TabIndex = 2;
             this.Rutasbutton.Text = "Rutas";
             this.Rutasbutton.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             // Prestamosbutton
             // 
-            this.Prestamosbutton.Location = new System.Drawing.Point(228, 163);
+            this.Prestamosbutton.Location = new System.Drawing.Point(83, 228);
             this.Prestamosbutton.Name = "Prestamosbutton";
-            this.Prestamosbutton.Size = new System.Drawing.Size(75, 23);
+            this.Prestamosbutton.Size = new System.Drawing.Size(88, 42);
             this.Prestamosbutton.TabIndex = 3;
             this.Prestamosbutton.Text = "Prestamos";
             this.Prestamosbutton.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             // Atrasosbutton
             // 
-            this.Atrasosbutton.Location = new System.Drawing.Point(321, 210);
+            this.Atrasosbutton.Location = new System.Drawing.Point(83, 296);
             this.Atrasosbutton.Name = "Atrasosbutton";
-            this.Atrasosbutton.Size = new System.Drawing.Size(75, 23);
+            this.Atrasosbutton.Size = new System.Drawing.Size(88, 42);
             this.Atrasosbutton.TabIndex = 4;
             this.Atrasosbutton.Text = "Atrasos";
             this.Atrasosbutton.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(553, 350);
+            this.ClientSize = new System.Drawing.Size(254, 350);
             this.Controls.Add(this.Atrasosbutton);
             this.Controls.Add(this.Prestamosbutton);
             this.Controls.Add(this.Rutasbutton);
