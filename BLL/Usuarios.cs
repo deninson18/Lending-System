@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using DAL;
 
 namespace BLL 
-{      
+{
+
     public class Usuarios : ClaseMaestra
     {
-          
+
         ConexionDb conexion = new ConexionDb();
 
         public int UsuarioId { get; set; }
@@ -21,7 +22,7 @@ namespace BLL
         public string Fecha { get; set; }
 
         public Usuarios()
-        {  
+        {
 
             UsuarioId = 0;
             Nombres = "";
