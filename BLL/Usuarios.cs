@@ -20,7 +20,7 @@ namespace BLL
         public string Contrasena { get; set; }
         public string AreaUsuario { get; set; }
         public string Fecha { get; set; }
-
+          
         public Usuarios()
         {
 
